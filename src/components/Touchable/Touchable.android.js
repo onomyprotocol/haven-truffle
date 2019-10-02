@@ -4,13 +4,12 @@ import {
   TouchableNativeFeedback,
   TouchableOpacity,
   View,
-  Platform,
 } from 'react-native';
 import { getHitSlop } from './helpers';
-
-export const isAndroid = Platform.OS === 'android';
-export const isAndroidLower21 = isAndroid && Platform.Version < 21;
-export const isAndroid28 = isAndroid && Platform.Version === 28;
+import {
+  isAndroidLower21,
+  isAndroid28,
+} from '../../utils/detectDevice';
 
 const noop = () => {};
 

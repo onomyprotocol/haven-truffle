@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 import { Empty } from '../components';
 import screens from './screens';
 import { CustomTabBar, TabIcon } from './components';
-import TabConfirmation from './TabConfirmation';
+import TabConfirmations from './TabConfirmations';
 import { colors } from '../styles';
 
 const routes = {
@@ -26,7 +26,7 @@ const routes = {
     },
   },
   [screens.Confirmation]: {
-    screen: TabConfirmation,
+    screen: TabConfirmations,
     navigationOptions: {
       tabBarIcon: (props) => (
         <TabIcon
