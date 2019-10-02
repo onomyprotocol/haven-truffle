@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import { t } from '../../i18n';
 import { defaultHeaderStyles } from '../../styles';
 import {
   Container,
@@ -21,7 +22,10 @@ function SelectAccountToLogin() {
         <Text style={s.topText}>Relictos</Text>
         <Text style={s.fullName}>Michael Glazyrin</Text>
       </View>
-      <Button title="Login" containerStyle={s.containerButton} />
+      <Button
+        title={t('common.login')}
+        containerStyle={s.containerButton}
+      />
     </Container>
   );
 }

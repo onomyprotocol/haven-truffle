@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import T from 'prop-types';
+
+import { t } from '../../i18n';
 import { colors } from '../../styles';
 
 const s = StyleSheet.create({
@@ -11,7 +13,7 @@ const s = StyleSheet.create({
 });
 
 function HeaderTitle({ textKey }) {
-  return <Text style={s.text}>{textKey}</Text>;
+  return <Text style={s.text}>{t(textKey)}</Text>;
 }
 
 HeaderTitle.propTypes = {

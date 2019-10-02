@@ -1,9 +1,15 @@
 import React from 'react';
-import { SafeAreaView, ViewPropTypes } from 'react-native';
+import { View, ViewPropTypes, StyleSheet } from 'react-native';
 import T from 'prop-types';
 
+const s = StyleSheet.create({
+  container: {
+    paddingHorizontal: 24,
+  },
+});
+
 function Container({ children, style }) {
-  return <SafeAreaView style={[style]}>{children}</SafeAreaView>;
+  return <View style={[s.container, style]}>{children}</View>;
 }
 
 Container.propTypes = {
