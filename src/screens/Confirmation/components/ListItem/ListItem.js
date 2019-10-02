@@ -8,6 +8,7 @@ import {
   ConfirmGrid,
   DeclineGrid,
   Text,
+  Touchable,
 } from '../../../../components';
 import s from './styles';
 
@@ -15,14 +16,20 @@ function ListItem({ index }) {
   return (
     <SwipeOut
       renderLeftActions={() => (
-        <View style={[s.swipeButton, s.confirm]}>
+        <Touchable
+          onPress={() => {}}
+          style={[s.swipeButton, s.confirm]}
+        >
           <ConfirmGrid />
-        </View>
+        </Touchable>
       )}
       renderRightActions={() => (
-        <View style={[s.swipeButton, s.decline]}>
+        <Touchable
+          onPress={() => {}}
+          style={[s.swipeButton, s.decline]}
+        >
           <DeclineGrid />
-        </View>
+        </Touchable>
       )}
       overshootLeft={false}
       overshootRight={false}
