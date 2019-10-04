@@ -1,6 +1,7 @@
 {
   "common": {
-    "login": "Login"
+    "login": "Login",
+    "continue": "Continue"
   },
   "selectAccountToLogin": {
     "title": "Select Account To Login"
