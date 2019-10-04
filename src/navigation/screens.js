@@ -7,4 +7,5 @@ export default mirror([
   'Confirmation',
   'Settings',
   'SelectAccountToLogin',
+  'SelectMultiAccountToLogin',
 ]);
