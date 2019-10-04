@@ -1,12 +1,7 @@
 import React from 'react';
-import { View, ViewPropTypes, StyleSheet } from 'react-native';
+import { View, ViewPropTypes } from 'react-native';
 import T from 'prop-types';
-
-const s = StyleSheet.create({
-  container: {
-    paddingHorizontal: 24,
-  },
-});
+import s from './styles';
 
 function Container({ children, style }) {
   return <View style={[s.container, style]}>{children}</View>;

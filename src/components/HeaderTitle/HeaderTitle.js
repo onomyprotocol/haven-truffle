@@ -1,16 +1,9 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 import T from 'prop-types';
 
 import { t } from '../../i18n';
-import { colors } from '../../styles';
-
-const s = StyleSheet.create({
-  text: {
-    color: colors.white,
-    fontSize: 16,
-  },
-});
+import s from './styles';
 
 function HeaderTitle({ textKey }) {
   return <Text style={s.text}>{t(textKey)}</Text>;

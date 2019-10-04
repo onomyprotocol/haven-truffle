@@ -33,7 +33,7 @@ function SelectAccountToLogin() {
 SelectAccountToLogin.navigationOptions = {
   ...defaultHeaderStyles,
   headerLeft: <BackButton containerStyle={s.leftHeader} />,
-  headerTitle: <HeaderTitle textKey="SelectAccountToLogin.title" />,
+  headerTitle: <HeaderTitle textKey="selectAccountToLogin.title" />,
 };
 
 export default SelectAccountToLogin;
