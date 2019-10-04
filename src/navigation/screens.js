@@ -5,4 +5,6 @@ export default mirror([
   'Wallet',
   'ConfirmationsTab',
   'Settings',
+
+  'UserConfirmations',
 ]);

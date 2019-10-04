@@ -20,7 +20,7 @@ const fakeIds = [
   { id: '8' },
 ];
 
-function Confirmation() {
+function UserConfirmations() {
   return (
     <Fragment>
       <Footer />
@@ -34,7 +34,7 @@ function Confirmation() {
   );
 }
 
-Confirmation.navigationOptions = {
+UserConfirmations.navigationOptions = {
   headerStyle: {
     backgroundColor: colors.primary,
   },
@@ -42,4 +42,4 @@ Confirmation.navigationOptions = {
   headerRight: <HeaderRight />,
 };
 
-export default Confirmation;
+export default UserConfirmations;

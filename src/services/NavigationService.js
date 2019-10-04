@@ -1,4 +1,5 @@
 import { NavigationActions } from 'react-navigation';
+import screens from '../navigation/screens';
 
 class NavigationServices {
   constructor() {
@@ -17,6 +18,10 @@ class NavigationServices {
 
   goBack() {
     this.navigation.dispatch(NavigationActions.back());
+  }
+
+  navigateToUserConfirmations() {
+    this.navigate({ routeName: screens.UserConfirmations });
   }
 }
 

@@ -1,4 +1,6 @@
-export { default as Confirmation } from './Confirmation/Confirmation';
 export {
   default as ConfirmationsTab,
 } from './ConfirmationsTab/ConfirmationsTab';
+export {
+  default as UserConfirmations,
+} from './UserConfirmations/UserConfirmations';

@@ -2,5 +2,8 @@
   "confirmationsTab": {
     "newConfirmations": "New Confirmations",
     "history": "History"
+  },
+  "newConfirmations": {
+    "badgeNew": "new"
   }
 }

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import { t } from '../../i18n';
 import { Touchable, Text, Empty } from '../../components';
-import NewConfirmations from '../NewConfirmations/NewConfirmations';
+import NewConfirmationsList from '../NewConfirmationsList/NewConfirmationsList';
 import s from './styles';
 
 function ConfirmationsTab() {
@@ -46,7 +46,7 @@ function ConfirmationsTab() {
           routes: [{ key: 'first' }, { key: 'second' }],
         }}
         renderScene={SceneMap({
-          first: NewConfirmations,
+          first: NewConfirmationsList,
           second: Empty,
         })}
         onIndexChange={(index) => setCurrentTab(index)}
