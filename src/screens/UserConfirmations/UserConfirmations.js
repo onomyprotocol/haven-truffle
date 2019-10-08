@@ -6,7 +6,7 @@ import {
   HeaderLeft,
   HeaderRight,
 } from './components';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 const fakeIds = [
@@ -35,9 +35,7 @@ function UserConfirmations() {
 }
 
 UserConfirmations.navigationOptions = {
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <HeaderLeft />,
   headerRight: <HeaderRight />,
 };

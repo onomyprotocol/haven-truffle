@@ -11,3 +11,6 @@ export { default as BackButton } from './BackButton/BackButton';
 export { default as CloseButton } from './CloseButton/CloseButton';
 export { default as Button } from './Button/Button';
 export { default as Avatar } from './Avatar/Avatar';
+export {
+  default as ConfirmationsListItem,
+} from './ConfirmationsListItem/ConfirmationsListItem';

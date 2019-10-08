@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../../../styles';
+import { colors } from '../../styles';
 
-const styles = StyleSheet.create({
-  container: {
+const s = StyleSheet.create({
+  itemContainer: {
     backgroundColor: colors.lightGray,
     height: 64,
     flexDirection: 'row',
@@ -13,9 +13,14 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: colors.gray,
   },
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   userInfo: {
     flexDirection: 'row',
     alignItems: 'center',
+    flex: 0.6,
   },
   userName: {
     fontSize: 17,
@@ -24,15 +29,18 @@ const styles = StyleSheet.create({
   rightContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+    flex: 0.4,
   },
   countContainer: {
     backgroundColor: colors.red,
     paddingHorizontal: 12,
     paddingVertical: 5,
     borderRadius: 16,
-    justifyContent: 'center',
     marginLeft: 16,
-    marginRight: 12,
+  },
+  historyCountContainer: {
+    backgroundColor: colors.darkGray,
   },
   countText: {
     fontSize: 12,
@@ -41,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default styles;
+export default s;

@@ -4,8 +4,7 @@ import { colors, dimensions } from '../../styles';
 const styles = StyleSheet.create({
   header: {
     backgroundColor: colors.primary,
-    height: 84,
-    paddingTop: dimensions.statusBarHeight,
+    height: dimensions.headerHeight,
     justifyContent: 'flex-end',
     paddingBottom: 16,
     paddingLeft: 24,

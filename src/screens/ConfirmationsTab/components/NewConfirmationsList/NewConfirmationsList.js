@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { ListItem } from './components';
+import { ConfirmationsListItem } from '../../../../components';
+import { NavigationService } from '../../../../services';
 
 const data = [
   {
@@ -32,7 +33,10 @@ function NewConfirmationsList() {
       data={data}
       keyExtractor={({ id }) => id}
       renderItem={({ item, index }) => (
-        <ListItem
+        <ConfirmationsListItem
+          onPress={() =>
+            NavigationService.navigateToUserConfirmations()
+          }
           avatar={item.avatar}
           userName={item.userName}
           count={item.count}
