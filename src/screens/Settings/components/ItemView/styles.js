@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../../../styles';
-import { scaleFontSize } from '../../../../utils';
+import { scaleFontSize } from '../../../../utils/scale';
 
 const CONTAINER_HEIGHT = 70;
 

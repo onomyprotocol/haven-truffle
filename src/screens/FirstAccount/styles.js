@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { colors, dimensions } from '../../styles';
-import { scaleWidth, scaleHeight, scaleFontSize } from '../../utils';
+import {
+  scaleWidth,
+  scaleHeight,
+  scaleFontSize,
+} from '../../utils/scale';
 
 const styles = StyleSheet.create({
   header: {

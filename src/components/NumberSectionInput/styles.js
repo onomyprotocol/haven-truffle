@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles';
-import { scaleHeight, scaleWidth } from '../../utils';
+import { scaleHeight, scaleWidth } from '../../utils/scale';
 
 const WIDTH_NUMBER_CONTAINER = scaleWidth(43);
 

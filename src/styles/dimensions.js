@@ -8,19 +8,12 @@ export const indent = 16;
 export const smallIndent = 12;
 export const avatarSize = 56;
 
-const iosStatusBarHeight = isIphoneX() ? 44 : 20;
+export const iosStatusBarHeight = isIphoneX() ? 44 : 20;
 
-const statusBarHeight = isAndroid
+export const statusBarHeight = isAndroid
   ? StatusBar.currentHeight
   : iosStatusBarHeight;
 
-const appBarHeight = Platform.OS === 'ios' ? 44 : 56;
+export const appBarHeight = Platform.OS === 'ios' ? 44 : 56;
 
-const headerHeight = appBarHeight + statusBarHeight;
-
-export default {
-  iosStatusBarHeight,
-  statusBarHeight,
-  appBarHeight,
-  headerHeight,
-};
+export const headerHeight = appBarHeight + statusBarHeight;

@@ -35,7 +35,7 @@ class NavigationServices {
   }
 
   navigateToUserConfirmations() {
-    this.navigate({ routeName: screens.UserConfirmations });
+    this.navigate(screens.UserConfirmations);
   }
 }
 
