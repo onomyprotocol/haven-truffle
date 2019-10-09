@@ -1,22 +1,37 @@
 import { NavigationActions } from 'react-navigation';
+import screens from '../navigation/screens';
 
 class NavigationServices {
-  constructor() {
-    this.navigation = null;
+  _navigation = null;
+
+  init(navigation) {
+    if (this._navigation) {
+      return;
+    }
+
+    this._navigation = navigation;
   }
 
-  init(ref) {
-    if (this.navigation) return;
+  navigate(screen, params) {
+    const route = { routeName: screen, params };
 
-    this.navigation = ref;
+    this._navigation.dispatch(NavigationActions.navigate(route));
   }
 
-  navigate(route) {
-    this.navigation.dispatch(NavigationActions.navigate(route));
+  goToRecoveryWords(props) {
+    this.navigate(screens.RecoveryWords, props);
+  }
+
+  goToRecoveryHavenId(props) {
+    this.navigate(screens.RecoveryHavenId, props);
+  }
+
+  goToAreYouSure(props) {
+    this.navigate(screens.AreYouSure, props);
   }
 
   goBack() {
-    this.navigation.dispatch(NavigationActions.back());
+    this._navigation.dispatch(NavigationActions.back());
   }
 }
 

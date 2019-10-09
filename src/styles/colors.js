@@ -12,4 +12,9 @@ export default {
   red: '#E86250',
   lightRed: '#FF8170',
   transparent: 'rgba(0, 0, 0, 0)',
+  border: '#DFE4ED',
+
+  scanQROrRecover: {
+    imageBg: '#ECF1F9',
+  },
 };

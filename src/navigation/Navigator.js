@@ -4,11 +4,12 @@ import AuthNavigator from './AuthNavigator';
 import screens from './screens';
 
 const routes = {
-  [screens.Auth]: AuthNavigator,
   [screens.App]: AppTabNavigation,
+  [screens.Auth]: AuthNavigator,
 };
 
 export default createStackNavigator(routes, {
   headerMode: 'none',
   mode: 'modal',
+  initialRouteName: screens.App,
 });

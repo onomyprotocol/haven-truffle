@@ -4,6 +4,7 @@ import { Empty } from '../components';
 import screens from './screens';
 import { CustomTabBar, TabIcon } from './components';
 import TabConfirmation from './TabConfirmation';
+import TabSettings from './TabSettings';
 import { colors } from '../styles';
 
 const routes = {
@@ -39,7 +40,7 @@ const routes = {
     },
   },
   [screens.Settings]: {
-    screen: Empty,
+    screen: TabSettings,
     navigationOptions: {
       tabBarIcon: (props) => (
         <TabIcon iconName="settings" label="Settings" {...props} />
