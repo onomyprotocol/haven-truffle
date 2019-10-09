@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, ViewPropTypes } from 'react-native';
+import { View, ViewPropTypes } from 'react-native';
 import T from 'prop-types';
 
-import { Avatar, Touchable } from '../../../../components';
+import { Avatar, Touchable, Text } from '../../../../components';
 import { CheckIcon } from '../../../../assets/svg';
 import s from './styles';
 
@@ -26,7 +26,9 @@ function ListItem({
     >
       <Avatar size={56} uri={avatarUri && avatarUri} />
       <View style={s.containerText}>
-        <Text style={s.title}>{title}</Text>
+        <Text medium style={s.title}>
+          {title}
+        </Text>
         <Text style={s.fullName}>{fullName}</Text>
       </View>
       <View style={[s.containerCheck, check && s.check]}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import { t } from '../../i18n';
 import { defaultHeaderStyles } from '../../styles';
@@ -9,6 +9,7 @@ import {
   HeaderTitle,
   Button,
   Avatar,
+  Text,
 } from '../../components';
 import s from './styles';
 
@@ -19,7 +20,9 @@ function SelectAccountToLogin() {
         <View style={s.containerAvatar}>
           <Avatar size={144} />
         </View>
-        <Text style={s.topText}>Relictos</Text>
+        <Text bold style={s.topText}>
+          Relictos
+        </Text>
         <Text style={s.fullName}>Michael Glazyrin</Text>
       </View>
       <Button

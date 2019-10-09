@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, { G, Path, Rect } from 'react-native-svg';
 
-const Logo = (props) => (
+const LogoIcon = (props) => (
   <Svg
     width={28.199}
     height={43.031}
@@ -32,4 +32,4 @@ const Logo = (props) => (
   </Svg>
 );
 
-export default Logo;
+export default LogoIcon;
