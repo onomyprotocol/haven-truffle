@@ -8,5 +8,86 @@
   },
   "historyConfirmations": {
     "badgeTxs": "txs"
+  },
+  "common": {
+    "login": "Login",
+    "continue": "Continue",
+    "done": "Done",
+    "recoverAccount": "Recover Account",
+    "enterWord": "Enter word"
+  },
+  "selectAccountToLogin": {
+    "title": "Select Account To Login"
+  },
+  "settings": {
+    "headerTitle": "Settings",
+    "walletAdvanced": "Wallet advanced mode",
+    "viewBackup": "View Backup Words",
+    "generateNew": "Generate new keys & backup words",
+    "recoverHaven": "Recover Haven ID with Backup Words"
+  },
+  "recoveryWords": {
+    "headerTitle": "Recovery words",
+    "title": "Save it",
+    "textInfo": "If you lose your phone, you can recover your accounts by typing in these 12 words in order in the Haven Companion App",
+    "textBottom": "Write this down on paper and store it somewhere safe – the order of your backup words matters!"
+  },
+  "recoveryHavenId": {
+    "headerTitle": "Recover Haven ID",
+    "textInfo": "Please, enter your backup words:",
+    "textBottom": "Note: Your currently active Haven ID and its accounts will be removed. The Haven ID and its accounts that you are recovering will become active. Please make sure you have the backup words for each Haven ID before continuing."
+  },
+  "areYouSure": {
+    "headerTitle": "Are you sure?",
+    "title": "Warning",
+    "textInfo": "Recovering another Haven ID and its associated accounts will replace your current ID & associated accounts. Only one Haven ID can be active at a time.\n\nDo you want to continue?",
+    "textButton": "Yes, continue!",
+    "textBottom": "Take me back"
+  },
+  "welcome": {
+    "headerTitle": "Welcome",
+    "title": "Welcome to \nHaven Companion",
+    "textInfo": "The safest way to manage your identity.",
+    "textButton": "Get Started",
+    "textBottom": "Recover Existing Account"
+  },
+  "recoverExistingAccount": {
+    "headerTitle": "Recover Existing  Account",
+    "textInfo": "Please, enter your backup words:",
+    "textButton": "Recover Account"
+  },
+  "welcomeOfficially": {
+    "headerTitle": "Welcome, officially!",
+    "title": "Welcome, officially!",
+    "textInfo": "Your accounts will be placed in the account list. To sign in, use the Haven QR code scan button found at the bottom right.\n\nTo create a new account, click the + button found at the top right.",
+    "button": "Got it!"
+  },
+  "checkBackupWords": {
+    "headerTitle": "Check Backup Words",
+    "textInfoTop": "For the last step, choose which word from the list below belongs to your paper backup. Remember:\n",
+    "textInfoBottom": "If you lose access to your backup words, we are unable to recover your accounts and you will have to create a new ID",
+    "button": "Finish"
+  },
+  "attention": {
+    "headerTitle": "Attention",
+    "title": "Be careful!",
+    "textInfo": "Your phone stores the key to your data. Without this key, not even we can access your data.",
+    "button": "Got it!"
+  },
+  "firstAccount": {
+    "headerTitle": "First Account",
+    "title": "Your First Account",
+    "topTextInfo": "Now let’s add your first account to your Haven ID! Scan a Haven Code to enter any of our apps.",
+    "bottomTextInfo": "Are you ready to scan your first Haven Code?",
+    "textButton": "I’m Ready!",
+    "textBottom": "I will scan a Haven Code later"
+  },
+  "scanQROrRecover": {
+    "headerTitle": "Scan QR or Recover",
+    "title": "Passwords are so 1900’s.",
+    "topTextInfo": "Simply Scan a Haven QR code to create your Haven ID!\n",
+    "bottomTextInfo": "You may also",
+    "recoverExistingAccounts": "Recover Existing Accounts",
+    "textButton": "Ok, Got it!"
   }
 }

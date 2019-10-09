@@ -5,7 +5,10 @@ import Svg, { G, Path } from 'react-native-svg';
 import { NavigationService } from '../../services';
 import Touchable from '../Touchable';
 
-function BackButton({ onPress, containerStyle }) {
+function BackButton({
+  onPress = () => NavigationService.goBack(),
+  containerStyle,
+}) {
   return (
     <Touchable
       borderless
