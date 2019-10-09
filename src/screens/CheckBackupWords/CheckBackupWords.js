@@ -8,7 +8,7 @@ import {
 } from '../../components';
 import { ListItem } from './components';
 import { t } from '../../i18n';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 const data = [
@@ -65,9 +65,7 @@ function CheckBackupWords() {
 
 CheckBackupWords.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="checkBackupWords.headerTitle" />,
 };

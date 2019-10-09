@@ -8,7 +8,7 @@ import {
 } from '../../components';
 import { t } from '../../i18n';
 import { scanQROrRecover } from '../../assets/png';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 function ScanQROrRecover() {
@@ -46,9 +46,7 @@ function ScanQROrRecover() {
 
 ScanQROrRecover.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerTitle: <HeaderTitle textKey="scanQROrRecover.headerTitle" />,
 };
 

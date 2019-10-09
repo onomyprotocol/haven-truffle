@@ -20,4 +20,6 @@ export default mirror([
   'Attention',
   'FirstAccount',
   'ScanQROrRecover',
+  'SuccessfullyImported',
+  'ImportExistingAccounts',
 ]);

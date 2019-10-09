@@ -7,7 +7,7 @@ import {
   ItemRecover,
   ItemView,
 } from './components';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 function Settings() {
@@ -22,9 +22,7 @@ function Settings() {
 }
 
 Settings.navigationOptions = {
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: (
     <HeaderTitle textKey="settings.headerTitle" style={s.header} />
   ),

@@ -89,5 +89,19 @@
     "bottomTextInfo": "You may also",
     "recoverExistingAccounts": "Recover Existing Accounts",
     "textButton": "Ok, Got it!"
+  },
+  "successfullyImported": {
+    "headerTitle": "Successfully Imported",
+    "title": "Successfully imported",
+    "topTextInfo": "Successfully imported your accounts!\n\nRemember, if you lose your backup words, we are unable to recover your accounts and you will have to create a new Haven ID. Make sure they are stored somewhere safe!",
+    "bottomTextInfo": "Do you need to view them again?",
+    "textButton": "They are safe!",
+    "textBottom": "Remind Me!"    
+  },
+  "ImportExistingAccounts": {
+    "headerTitle": "Import Existing Accounts",
+    "title": "Welcome",
+    "textInfo": "We’ve detected these Haven Accounts on your phone! Let’s import them",
+    "textButton": "Import Accounts"
   }
 }

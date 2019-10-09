@@ -11,6 +11,9 @@ export {
 } from './CheckBackupWords/CheckBackupWords';
 export { default as Settings } from './Settings/Settings';
 export {
+  default as SuccessfullyImported,
+} from './SuccessfullyImported/SuccessfullyImported';
+export {
   default as ScanQROrRecover,
 } from './ScanQROrRecover/ScanQROrRecover';
 export {
@@ -33,3 +36,6 @@ export {
   default as WelcomeOfficially,
 } from './WelcomeOfficially/WelcomeOfficially';
 export { default as FirstAccount } from './FirstAccount/FirstAccount';
+export {
+  default as ImportExistingAccounts,
+} from './ImportExistingAccounts/ImportExistingAccounts';

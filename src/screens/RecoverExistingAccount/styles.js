@@ -1,13 +1,17 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles';
-import { scaleHeight, scaleWidth } from '../../utils/scale';
+import {
+  scaleHeight,
+  scaleWidth,
+  scaleFontSize,
+} from '../../utils/scale';
 
 const styles = StyleSheet.create({
   header: {
     marginLeft: scaleWidth(24),
   },
   headerTitle: {
-    fontSize: 14,
+    fontSize: scaleFontSize(16),
   },
   wrapper: {
     flex: 1,

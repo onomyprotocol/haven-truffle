@@ -8,7 +8,7 @@ import {
 } from '../../components';
 import { t } from '../../i18n';
 import { attention } from '../../assets/png';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 function Attention() {
@@ -37,9 +37,7 @@ function Attention() {
 
 Attention.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="attention.headerTitle" />,
 };

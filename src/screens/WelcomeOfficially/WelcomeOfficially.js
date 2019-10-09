@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 import { t } from '../../i18n';
-import { defaultHeaderStyles } from '../../styles';
+import { headerStyle } from '../../styles';
 import {
   Container,
   BackButton,
@@ -41,7 +41,7 @@ function WelcomeOfficially() {
 }
 
 WelcomeOfficially.navigationOptions = {
-  ...defaultHeaderStyles,
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.leftHeader} />,
   headerTitle: (
     <HeaderTitle textKey="welcomeOfficially.headerTitle" />

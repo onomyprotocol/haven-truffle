@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     fontSize: 16,
     marginTop: scaleHeight(52),
-    marginBottom: scaleHeight(24),
+    marginBottom: scaleHeight(54),
   },
 });
 
