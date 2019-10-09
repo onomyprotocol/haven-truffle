@@ -1,4 +1,14 @@
 {
+  "confirmationsTab": {
+    "newConfirmations": "New Confirmations",
+    "history": "History"
+  },
+  "newConfirmations": {
+    "badgeNew": "new"
+  },
+  "historyConfirmations": {
+    "badgeTxs": "txs"
+  },
   "common": {
     "login": "Login",
     "continue": "Continue",

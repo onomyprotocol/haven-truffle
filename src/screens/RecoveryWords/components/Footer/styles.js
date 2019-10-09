@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { scaleHeight, scaleFontSize } from '../../../../utils';
+import { scaleHeight, scaleFontSize } from '../../../../utils/scale';
 
 const styles = StyleSheet.create({
   bottomContainer: {

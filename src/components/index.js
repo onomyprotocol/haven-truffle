@@ -13,6 +13,9 @@ export { default as IconLike } from './IconLike/IconLike';
 export { default as BackButton } from './BackButton/BackButton';
 export { default as CloseButton } from './CloseButton/CloseButton';
 export { default as Button } from './Button/Button';
+export {
+  default as ConfirmationsListItem,
+} from './ConfirmationsListItem/ConfirmationsListItem';
 export { default as HeaderTitle } from './HeaderTitle/HeaderTitle';
 export {
   default as NumberSection,

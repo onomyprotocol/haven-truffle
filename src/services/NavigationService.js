@@ -33,6 +33,10 @@ class NavigationServices {
   goBack() {
     this._navigation.dispatch(NavigationActions.back());
   }
+
+  navigateToUserConfirmations() {
+    this.navigate(screens.UserConfirmations);
+  }
 }
 
 export default new NavigationServices();

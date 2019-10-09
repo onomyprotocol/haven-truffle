@@ -10,7 +10,11 @@ function BackButton({
   containerStyle,
 }) {
   return (
-    <Touchable borderless style={containerStyle} onPress={onPress}>
+    <Touchable
+      borderless
+      style={containerStyle}
+      onPress={onPress || (() => NavigationService.goBack())}
+    >
       <Svg width="16.601" height="14.11" viewBox="0 0 16.601 14.11">
         <G id="icon" transform="translate(-1591 17.989)" fill="#fff">
           <Path

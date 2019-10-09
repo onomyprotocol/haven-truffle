@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors, dimensions } from '../../styles';
-import { scaleHeight } from '../../utils';
+import { scaleHeight } from '../../utils/scale';
 
 const styles = StyleSheet.create({
   header: {

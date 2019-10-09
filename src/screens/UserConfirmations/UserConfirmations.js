@@ -6,7 +6,7 @@ import {
   HeaderLeft,
   HeaderRight,
 } from './components';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 const fakeIds = [
@@ -20,7 +20,7 @@ const fakeIds = [
   { id: '8' },
 ];
 
-function Confirmation() {
+function UserConfirmations() {
   return (
     <Fragment>
       <Footer />
@@ -34,12 +34,10 @@ function Confirmation() {
   );
 }
 
-Confirmation.navigationOptions = {
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+UserConfirmations.navigationOptions = {
+  ...headerStyle,
   headerLeft: <HeaderLeft />,
   headerRight: <HeaderRight />,
 };
 
-export default Confirmation;
+export default UserConfirmations;

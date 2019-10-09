@@ -4,8 +4,10 @@ export default mirror([
   'Auth',
   'Profile',
   'Wallet',
-  'Confirmation',
+  'ConfirmationsTab',
   'Settings',
+
+  'UserConfirmations',
   'SelectAccountToLogin',
   'SelectMultiAccountToLogin',
   'RecoveryWords',

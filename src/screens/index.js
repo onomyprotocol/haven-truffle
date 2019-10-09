@@ -1,6 +1,11 @@
+export {
+  default as ConfirmationsTab,
+} from './ConfirmationsTab/ConfirmationsTab';
+export {
+  default as UserConfirmations,
+} from './UserConfirmations/UserConfirmations';
 export { default as AreYouSure } from './AreYouSure/AreYouSure';
 export { default as Attention } from './Attention/Attention';
-export { default as Confirmation } from './Confirmation/Confirmation';
 export {
   default as CheckBackupWords,
 } from './CheckBackupWords/CheckBackupWords';
