@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
 
 import { t } from '../../i18n';
-import { defaultHeaderStyles } from '../../styles';
+import { headerStyle } from '../../styles';
 import { BackButton, HeaderTitle, Button } from '../../components';
 import { List, EmptyListAccount } from './components';
 import s from './styles';
@@ -43,7 +43,7 @@ function SelectMultiAccountToLogin() {
 }
 
 SelectMultiAccountToLogin.navigationOptions = {
-  ...defaultHeaderStyles,
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.leftHeader} />,
   headerTitle: <HeaderTitle textKey="selectAccountToLogin.title" />,
 };

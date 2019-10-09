@@ -8,7 +8,7 @@ import {
   Button,
 } from '../../components';
 import { t } from '../../i18n';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
 
@@ -61,9 +61,7 @@ function RecoverExistingAccount() {
 
 RecoverExistingAccount.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: (
     <HeaderTitle

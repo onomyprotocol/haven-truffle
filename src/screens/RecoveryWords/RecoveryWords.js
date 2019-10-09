@@ -6,7 +6,7 @@ import {
   NumberSection,
 } from '../../components';
 import { Header, Footer } from './components';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 const data = [
@@ -27,8 +27,9 @@ const data = [
 function RecoveryWords() {
   return (
     <View style={s.wrapper}>
-      <Header />
       <FlatList
+        ListHeaderComponent={Header}
+        ListFooterComponent={Footer}
         style={s.container}
         numColumns={2}
         data={data}
@@ -41,16 +42,13 @@ function RecoveryWords() {
         )}
         keyExtractor={({ number }) => number}
       />
-      <Footer />
     </View>
   );
 }
 
 RecoveryWords.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="recoveryWords.headerTitle" />,
 };

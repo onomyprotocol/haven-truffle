@@ -8,7 +8,7 @@ import {
   Button,
 } from '../../components';
 import { t } from '../../i18n';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
 
@@ -64,9 +64,7 @@ function RecoveryHavenId() {
 
 RecoveryHavenId.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="recoveryHavenId.headerTitle" />,
 };

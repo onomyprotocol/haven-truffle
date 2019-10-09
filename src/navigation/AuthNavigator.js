@@ -10,6 +10,8 @@ import {
   FirstAccount,
   ScanQROrRecover,
   AreYouSure,
+  SuccessfullyImported,
+  ImportExistingAccounts,
 } from '../screens';
 import screens from './screens';
 
@@ -24,9 +26,11 @@ const routes = {
   [screens.FirstAccount]: FirstAccount,
   [screens.ScanQROrRecover]: ScanQROrRecover,
   [screens.AreYouSure]: AreYouSure,
+  [screens.SuccessfullyImported]: SuccessfullyImported,
+  [screens.ImportExistingAccounts]: ImportExistingAccounts,
 };
 
 export default createStackNavigator(routes, {
   headerLayoutPreset: 'center',
-  initialRouteName: screens.WelcomeOfficially,
+  initialRouteName: screens.SelectMultiAccountToLogin,
 });

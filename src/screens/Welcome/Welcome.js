@@ -8,7 +8,7 @@ import {
 } from '../../components';
 import { t } from '../../i18n';
 import { onboardingWelcome } from '../../assets/png';
-import { colors, dimensions } from '../../styles';
+import { headerStyle, dimensions } from '../../styles';
 import s from './styles';
 
 function Welcome() {
@@ -41,9 +41,7 @@ function Welcome() {
 
 Welcome.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerTitle: <HeaderTitle textKey="welcome.headerTitle" />,
 };
 

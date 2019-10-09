@@ -9,7 +9,7 @@ import {
 } from '../../components';
 import { t } from '../../i18n';
 import { areYouSure } from '../../assets/png';
-import { colors } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
 
 function AreYouSure() {
@@ -41,9 +41,7 @@ function AreYouSure() {
 
 AreYouSure.navigationOptions = {
   tabBarVisible: false,
-  headerStyle: {
-    backgroundColor: colors.primary,
-  },
+  ...headerStyle,
   headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="areYouSure.headerTitle" />,
 };

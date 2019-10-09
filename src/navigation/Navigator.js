@@ -11,5 +11,5 @@ const routes = {
 export default createStackNavigator(routes, {
   headerMode: 'none',
   mode: 'modal',
-  initialRouteName: screens.App,
+  initialRouteName: screens.Auth,
 });

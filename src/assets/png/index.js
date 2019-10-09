@@ -5,3 +5,6 @@ export {
 } from './onboardingWelcome.png';
 export { default as firstAccount } from './firstAccount.png';
 export { default as scanQROrRecover } from './scanQROrRecover.png';
+export {
+  default as successfullyImported,
+} from './successfullyImported.png';

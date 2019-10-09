@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import {
-  Touchable,
-  Text,
-  SwitchButton,
-} from '../../../../components';
+import { View } from 'react-native';
+import { Text, SwitchButton } from '../../../../components';
 import s from './styles';
 import { t } from '../../../../i18n';
 
@@ -15,12 +12,12 @@ function ItemWallet() {
   }, []);
 
   return (
-    <Touchable style={s.container}>
+    <View style={s.container}>
       <Text medium style={s.text}>
         {t('settings.walletAdvanced')}
       </Text>
       <SwitchButton enabled={isEnabled} onChange={onChange} />
-    </Touchable>
+    </View>
   );
 }
 

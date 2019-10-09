@@ -1,43 +1,39 @@
 import { StyleSheet } from 'react-native';
-
+import {
+  scaleHeight,
+  scaleFontSize,
+  scaleWidth,
+} from '../../../../utils';
 import { colors } from '../../../../styles';
-import { scaleWidth } from '../../../../utils';
-
-const CHECK_SIZE = 32;
 
 const s = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 16,
+    paddingVertical: scaleHeight(16),
     paddingHorizontal: 24,
   },
   containerText: {
     flex: 1,
     justifyContent: 'center',
-    marginLeft: scaleWidth(24),
+    marginLeft: 24,
   },
   title: {
     color: colors.blueDark,
-    fontSize: 17,
+    fontSize: scaleFontSize(17),
   },
   fullName: {
-    marginTop: 10,
+    marginTop: scaleHeight(10),
     color: colors.grayDark,
-    fontSize: 14,
+    fontSize: scaleFontSize(14),
   },
-  containerCheck: {
-    height: CHECK_SIZE,
-    width: CHECK_SIZE,
-    borderRadius: CHECK_SIZE / 2,
-    borderColor: colors.primary,
-    borderWidth: 2,
+  containerIcon: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'center',
   },
-  check: {
-    backgroundColor: colors.primary,
+  icon: {
+    marginLeft: scaleWidth(8),
   },
 });
 
