@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   image: {
+    position: 'absolute',
+    bottom: 0,
+    zIndex: -1,
     width: dimensions.width,
     height: dimensions.height / 2.2,
   },
