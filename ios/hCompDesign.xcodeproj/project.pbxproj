@@ -24,6 +24,7 @@
 		DE19AAEB23439D9D00E55BDF /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE19AAE723439D9D00E55BDF /* Gilroy-Regular.ttf */; };
 		DE19AAEC23439D9D00E55BDF /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE19AAE823439D9D00E55BDF /* Gilroy-SemiBold.ttf */; };
 		DE19AAED23439D9D00E55BDF /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE19AAE923439D9D00E55BDF /* Gilroy-Bold.ttf */; };
+		DEC3707D234E2BDF00446600 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC3707C234E2BDF00446600 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		DE19AAE723439D9D00E55BDF /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Regular.ttf"; path = "../../assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
 		DE19AAE823439D9D00E55BDF /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-SemiBold.ttf"; path = "../../assets/fonts/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		DE19AAE923439D9D00E55BDF /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gilroy-Bold.ttf"; path = "../../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		DEC3707B234E2BDF00446600 /* hCompDesign-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hCompDesign-Bridging-Header.h"; sourceTree = "<group>"; };
+		DEC3707C234E2BDF00446600 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EEE991AE90C9D129829060AB /* libPods-hCompDesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hCompDesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +185,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				DEC3707C234E2BDF00446600 /* File.swift */,
 				DE19AAE523439D5600E55BDF /* fonts */,
 				13B07FAE1A68108700A75B9A /* hCompDesign */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -189,6 +193,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0FA7E933B57242C147D335A2 /* Pods */,
+				DEC3707B234E2BDF00446600 /* hCompDesign-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -310,6 +315,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1100;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -553,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				DEC3707D234E2BDF00446600 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A31F15B28EBC397DBF524587 /* Pods-hCompDesignTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -629,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54C9DDF9FC16C190451AAADA /* Pods-hCompDesignTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = hCompDesignTests/Info.plist;
@@ -649,7 +660,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 080DAFCCFBB30FF71765246B /* Pods-hCompDesign.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = hCompDesign/Info.plist;
@@ -661,6 +674,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = hCompDesign;
+				SWIFT_OBJC_BRIDGING_HEADER = "hCompDesign-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -669,7 +685,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4846042F994BA42E7B5BD167 /* Pods-hCompDesign.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = hCompDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -680,6 +698,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = hCompDesign;
+				SWIFT_OBJC_BRIDGING_HEADER = "hCompDesign-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -841,6 +861,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -887,6 +908,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

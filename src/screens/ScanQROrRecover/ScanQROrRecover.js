@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
+import LottieView from 'lottie-react-native';
 import {
   HeaderTitle,
   Text,
@@ -7,9 +8,10 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-import { scanQROrRecover } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
+
+const qrAnimation = require('../../animations/qr.json');
 
 function ScanQROrRecover() {
   return (
@@ -33,11 +35,13 @@ function ScanQROrRecover() {
         </View>
       </View>
       <View style={s.bottomContainer}>
-        <Image source={scanQROrRecover} style={s.image} />
         <Button
           title={t('scanQROrRecover.textButton')}
           containerStyle={s.containerButton}
         />
+        <View style={s.imageContainer}>
+          <LottieView autoPlay source={qrAnimation} style={s.image} />
+        </View>
         <View style={s.imageBg} />
       </View>
     </View>
