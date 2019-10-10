@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors, dimensions } from '../../styles';
+import { colors } from '../../styles';
 
 const styles = StyleSheet.create({
   header: {
@@ -35,17 +35,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginRight: 5,
   },
-
+  image: {
+    width: '160%',
+    height: '100%',
+  },
   recoverExistingAccounts: {
     color: colors.primary,
     fontSize: 14,
   },
-  image: {
+  imageContainer: {
     position: 'absolute',
-    bottom: 0,
-    zIndex: -1,
-    width: dimensions.width,
-    height: dimensions.height / 2.2,
+    bottom: 45,
+    alignSelf: 'center',
   },
   containerButton: {
     alignSelf: 'center',
@@ -56,6 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 52,
     position: 'absolute',
     bottom: 60,
+    zIndex: 1,
   },
   containerBottomText: {
     alignSelf: 'center',
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   imageBg: {
-    height: 30,
+    height: 100,
     backgroundColor: colors.scanQROrRecover.imageBg,
   },
 });

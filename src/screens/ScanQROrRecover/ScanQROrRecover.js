@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { View, Image } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import LottieView from 'lottie-react-native';
 import {
   HeaderTitle,
@@ -8,17 +8,12 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-// import { scanQROrRecover } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
-
-const backgroundImg = require('../../../assets/backgroundForQR.png');
 
 const qrAnimation = require('../../animations/qr.json');
 
 function ScanQROrRecover() {
-  const animationRef = useRef();
-
   return (
     <View style={s.container}>
       <View style={s.topTextContainer}>
@@ -44,20 +39,10 @@ function ScanQROrRecover() {
           title={t('scanQROrRecover.textButton')}
           containerStyle={s.containerButton}
         />
-        {/* <View style={s.imageBg} /> */}
-      </View>
-      <View style={{ backgroundColor: 'green' }}>
-        <Image source={backgroundImg} style={s.image} />
-        <LottieView
-          autoPlay
-          loop
-          ref={animationRef}
-          source={qrAnimation}
-          style={{
-            width: 60,
-            height: 60,
-          }}
-        />
+        <View style={s.imageContainer}>
+          <LottieView autoPlay source={qrAnimation} style={s.image} />
+        </View>
+        <View style={s.imageBg} />
       </View>
     </View>
   );
