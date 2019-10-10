@@ -39,3 +39,5 @@ export { default as FirstAccount } from './FirstAccount/FirstAccount';
 export {
   default as ImportExistingAccounts,
 } from './ImportExistingAccounts/ImportExistingAccounts';
+export { default as MyAccounts } from './MyAccounts/MyAccounts';
+export { default as LoginHistory } from './LoginHistory/LoginHistory';

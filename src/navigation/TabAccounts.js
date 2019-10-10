@@ -1,0 +1,18 @@
+import { createStackNavigator } from 'react-navigation';
+import { defaultAppNavigationOptions } from './AppNavigator.helpers';
+import screens from './screens';
+import { MyAccounts, LoginHistory } from '../screens';
+
+const TabAccounts = createStackNavigator(
+  {
+    [screens.MyAccounts]: MyAccounts,
+    [screens.LoginHistory]: LoginHistory,
+  },
+  {
+    initialRouteName: screens.LoginHistory,
+    headerLayoutPreset: 'center',
+    ...defaultAppNavigationOptions,
+  },
+);
+
+export default TabAccounts;

@@ -14,7 +14,9 @@
     "continue": "Continue",
     "done": "Done",
     "recoverAccount": "Recover Account",
-    "enterWord": "Enter word"
+    "enterWord": "Enter word",
+    "approved": "Approved",
+    "denied": "Denied"
   },
   "selectAccountToLogin": {
     "title": "Select Account To Login"
@@ -98,10 +100,15 @@
     "textButton": "They are safe!",
     "textBottom": "Remind Me!"    
   },
-  "ImportExistingAccounts": {
+  "importExistingAccounts": {
     "headerTitle": "Import Existing Accounts",
     "title": "Welcome",
     "textInfo": "We’ve detected these Haven Accounts on your phone! Let’s import them",
     "textButton": "Import Accounts"
+  },
+  "loginHistory": {
+    "headerTitle": "Login History",
+    "approved": "Approved",
+    "denied": "Denied"
   }
 }

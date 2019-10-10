@@ -6,10 +6,10 @@ import Text from '../Text/Text';
 import { t } from '../../i18n';
 import s from './styles';
 
-function HeaderTitle({ textKey, style }) {
+function HeaderTitle({ textKey, style, text }) {
   return (
     <Text semiBold style={[s.text, style]}>
-      {t(textKey)}
+      {`${text ? `${text} ` : ''}${t(textKey)}`}
     </Text>
   );
 }
@@ -17,6 +17,7 @@ function HeaderTitle({ textKey, style }) {
 HeaderTitle.propTypes = {
   textKey: T.string.isRequired,
   style: ViewPropTypes.style,
+  text: T.string,
 };
 
 export default HeaderTitle;

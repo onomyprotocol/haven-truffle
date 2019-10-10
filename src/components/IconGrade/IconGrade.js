@@ -14,13 +14,19 @@ const colorType = {
   blue: ['#4877c1', '#074789'],
 };
 
-const IconGrade = ({ containerStyle, color = 'blue' }) => (
+const DEFAULT_SIZE = 24;
+
+const IconGrade = ({
+  containerStyle,
+  color = 'blue',
+  size = DEFAULT_SIZE,
+}) => (
   <Svg
     style={containerStyle}
     id="logo_grad"
     data-name="logo grad"
-    width="24"
-    height="24"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
   >
     <Defs>
@@ -73,6 +79,8 @@ const IconGrade = ({ containerStyle, color = 'blue' }) => (
 
 IconGrade.propTypes = {
   containerStyle: T.object,
+  size: T.number,
+  color: T.string,
 };
 
 export default IconGrade;

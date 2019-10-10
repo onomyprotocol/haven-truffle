@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import colors from './colors';
 
-const androidConfig = {
+export const androidConfig = {
   height: 56,
 };
 

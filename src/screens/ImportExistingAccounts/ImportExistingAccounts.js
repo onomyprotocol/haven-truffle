@@ -19,7 +19,7 @@ function ImportExistingAccounts() {
       <Header />
       <List data={data} />
       <Button
-        title={t('ImportExistingAccounts.textButton')}
+        title={t('importExistingAccounts.textButton')}
         containerStyle={s.containerButton}
       />
     </View>
@@ -32,7 +32,7 @@ ImportExistingAccounts.navigationOptions = {
   headerTitle: (
     <HeaderTitle
       style={s.headerTitle}
-      textKey="ImportExistingAccounts.headerTitle"
+      textKey="importExistingAccounts.headerTitle"
     />
   ),
 };
