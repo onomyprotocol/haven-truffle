@@ -8,10 +8,10 @@ function Header() {
   return (
     <View style={s.topTextContainer}>
       <Text semiBold style={s.title}>
-        {t('ImportExistingAccounts.title')}
+        {t('importExistingAccounts.title')}
       </Text>
       <Text medium style={s.textInfo}>
-        {t('ImportExistingAccounts.textInfo')}
+        {t('importExistingAccounts.textInfo')}
       </Text>
     </View>
   );

@@ -2,7 +2,7 @@ import mirror from 'mirror-to-object-pairs';
 
 export default mirror([
   'Auth',
-  'Profile',
+  'Accounts',
   'Wallet',
   'ConfirmationsTab',
   'Settings',
@@ -22,4 +22,6 @@ export default mirror([
   'ScanQROrRecover',
   'SuccessfullyImported',
   'ImportExistingAccounts',
+  'MyAccounts',
+  'LoginHistory',
 ]);

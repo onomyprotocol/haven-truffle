@@ -5,11 +5,12 @@ import screens from './screens';
 import { CustomTabBar, TabIcon } from './components';
 import TabConfirmations from './TabConfirmations';
 import TabSettings from './TabSettings';
+import TabAccounts from './TabAccounts';
 import { colors } from '../styles';
 
 const routes = {
-  [screens.Profile]: {
-    screen: Empty,
+  [screens.Accounts]: {
+    screen: TabAccounts,
     navigationOptions: {
       tabBarIcon: (props) => (
         <TabIcon iconName="profile" label="Accounts" {...props} />
