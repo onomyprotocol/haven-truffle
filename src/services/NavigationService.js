@@ -77,6 +77,10 @@ class NavigationServices {
   navigateToFirstAccount() {
     this.navigate(screens.FirstAccount);
   }
+
+  navigateToLoginHistory(params) {
+    this.navigate(screens.LoginHistory, params);
+  }
 }
 
 export default new NavigationServices();

@@ -5,6 +5,7 @@ import { headerStyle } from '../../styles';
 import { HeaderTitle } from '../../components';
 import { Section, HeaderRight, EmptyListAccount } from './components';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const data = [
   { id: '1', fullName: 'Michael Glazyrin', title: 'Relictos' },
@@ -42,7 +43,11 @@ MyAccounts.navigationOptions = {
       style={s.headerLeft}
     />
   ),
-  headerRight: <HeaderRight />,
+  headerRight: (
+    <HeaderRight
+      onPress={() => NavigationService.navigateToLoginHistory()}
+    />
+  ),
 };
 
 export default MyAccounts;
