@@ -9,7 +9,7 @@ function ItemRecover() {
   return (
     <Touchable
       style={s.container}
-      onPress={() => NavigationService.goToRecoveryHavenId()}
+      onPress={() => NavigationService.navigateToRecoveryHavenId()}
     >
       <Text medium style={s.text}>
         {t('settings.recoverHaven')}

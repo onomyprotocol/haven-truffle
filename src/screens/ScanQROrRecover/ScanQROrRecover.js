@@ -6,10 +6,12 @@ import {
   Text,
   Button,
   Touchable,
+  BackButton,
 } from '../../components';
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const qrAnimation = require('../../animations/qr.json');
 
@@ -27,7 +29,15 @@ function ScanQROrRecover() {
           <Text medium style={s.bottomTextInfo}>
             {t('scanQROrRecover.bottomTextInfo')}
           </Text>
-          <Touchable>
+          <Touchable
+            onPress={() =>
+              NavigationService.navigateToRecoverExistingAccount({
+                buttonTextKey: 'common.recoverAccount',
+                onPress: () =>
+                  NavigationService.navigateToAttention(),
+              })
+            }
+          >
             <Text semiBold style={s.recoverExistingAccounts}>
               {t('scanQROrRecover.recoverExistingAccounts')}
             </Text>
@@ -38,6 +48,9 @@ function ScanQROrRecover() {
         <Button
           title={t('scanQROrRecover.textButton')}
           containerStyle={s.containerButton}
+          onPress={() =>
+            NavigationService.navigateToWelcomeOfficially()
+          }
         />
         <View style={s.imageContainer}>
           <LottieView autoPlay source={qrAnimation} style={s.image} />
@@ -51,6 +64,7 @@ function ScanQROrRecover() {
 ScanQROrRecover.navigationOptions = {
   tabBarVisible: false,
   ...headerStyle,
+  headerLeft: <BackButton containerStyle={s.header} />,
   headerTitle: <HeaderTitle textKey="scanQROrRecover.headerTitle" />,
 };
 

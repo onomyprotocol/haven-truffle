@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   title: {
-    fontSize: 16,
+    fontSize: 24,
     color: colors.blueDark,
   },
   textInfoTop: {

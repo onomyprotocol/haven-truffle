@@ -44,8 +44,10 @@
     "headerTitle": "Are you sure?",
     "title": "Warning",
     "textInfo": "Recovering another Haven ID and its associated accounts will replace your current ID & associated accounts. Only one Haven ID can be active at a time.\n\nDo you want to continue?",
-    "textButton": "Yes, continue!",
-    "textBottom": "Take me back"
+    "continue": "Yes, continue!",
+    "textBottom": "Take me back",
+    "safe":"Yes, they’re safe!",
+    "textInfoOnboarding2": "You will lose your accounts if you lose your backup words!"
   },
   "welcome": {
     "headerTitle": "Welcome",

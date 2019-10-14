@@ -26,9 +26,8 @@ function MyAccounts() {
         <EmptyListAccount />
       ) : (
         <ScrollView style={s.container}>
-          <Section text="some text" data={data} />
-          <Section text="some text" data={data} />
-          <Section text="some text" data={data} />
+          <Section text="Haven Social Accounts" data={data} />
+          <Section text="Haven Social Accounts" data={data} />
         </ScrollView>
       )}
     </View>

@@ -9,6 +9,7 @@ import {
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const attention = require('../../../assets/attention.png');
 
@@ -31,6 +32,19 @@ function Attention() {
       <Button
         title={t('attention.button')}
         containerStyle={s.containerButton}
+        onPress={() =>
+          NavigationService.navigateToRecoveryWords({
+            buttonTextKey: 'common.continue',
+            onPress: () =>
+              NavigationService.navigateToCheckBackupWords({
+                onPress: () =>
+                  NavigationService.navigateToFirstAccount({
+                    onPress: () =>
+                      NavigationService.navigateToFirstAccount(),
+                  }),
+              }),
+          })
+        }
       />
     </View>
   );

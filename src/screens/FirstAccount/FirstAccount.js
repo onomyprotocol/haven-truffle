@@ -10,6 +10,7 @@ import {
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const firstAccount = require('../../../assets/firstAccount.png');
 
@@ -33,7 +34,12 @@ function FirstAccount() {
           title={t('firstAccount.textButton')}
           containerStyle={s.containerButton}
         />
-        <Touchable style={s.containerBottomText}>
+        <Touchable
+          style={s.containerBottomText}
+          onPress={() =>
+            NavigationService.navigateToWelcomeOfficially()
+          }
+        >
           <Text semiBold style={s.textBottom}>
             {t('firstAccount.textBottom')}
           </Text>

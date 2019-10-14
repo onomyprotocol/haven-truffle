@@ -38,16 +38,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     fontSize: 16,
     marginTop: scaleHeight(52),
-  },
-  containerBottomText: {
-    alignSelf: 'center',
-    padding: scaleHeight(15),
-    marginTop: scaleHeight(16),
-    marginBottom: scaleHeight(24),
-  },
-  takeMeBack: {
-    color: colors.primary,
-    fontSize: 16,
+    marginBottom: scaleHeight(83),
   },
 });
 

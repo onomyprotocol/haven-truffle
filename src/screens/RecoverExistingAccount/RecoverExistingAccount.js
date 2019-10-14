@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, View } from 'react-native';
+import T from 'prop-types';
 import {
   HeaderTitle,
   BackButton,
@@ -10,7 +11,6 @@ import {
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
-import { NavigationService } from '../../services';
 
 const data = [
   { text: 'After', number: '1' },
@@ -27,7 +27,14 @@ const data = [
   { text: 'these', number: '12' },
 ];
 
-function RecoverExistingAccount() {
+function RecoverExistingAccount({ navigation }) {
+  const buttonTextKey = navigation.getParam(
+    'buttonTextKey',
+    'recoverExistingAccount.textButton',
+  );
+
+  const onPress = navigation.getParam('onPress', () => {});
+
   return (
     <View style={s.wrapper}>
       <FlatList
@@ -50,14 +57,18 @@ function RecoverExistingAccount() {
       />
       <View style={s.bottomContainer}>
         <Button
-          title={t('recoverExistingAccount.textButton')}
+          title={t(buttonTextKey)}
           containerStyle={s.containerButton}
-          onPress={() => NavigationService.goToAreYouSure()}
+          onPress={onPress}
         />
       </View>
     </View>
   );
 }
+
+RecoverExistingAccount.propTypes = {
+  navigation: T.object,
+};
 
 RecoverExistingAccount.navigationOptions = {
   tabBarVisible: false,

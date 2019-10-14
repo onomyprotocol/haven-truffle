@@ -18,15 +18,31 @@ class NavigationServices {
     this._navigation.dispatch(NavigationActions.navigate(route));
   }
 
-  goToRecoveryWords(props) {
+  navigateToApp() {
+    this.navigate(screens.App);
+  }
+
+  navigateToOnboarding() {
+    this.navigate(screens.Onboarding);
+  }
+
+  navigateToOnboarding2() {
+    this.navigate(screens.Onboarding2);
+  }
+
+  navigateToRecoveryWords(props) {
     this.navigate(screens.RecoveryWords, props);
   }
 
-  goToRecoveryHavenId(props) {
+  navigateToRecoveryHavenId(props) {
     this.navigate(screens.RecoveryHavenId, props);
   }
 
-  goToAreYouSure(props) {
+  navigateToRecoverExistingAccount(params) {
+    this.navigate(screens.RecoverExistingAccount, params);
+  }
+
+  navigateToAreYouSure(props) {
     this.navigate(screens.AreYouSure, props);
   }
 
@@ -36,6 +52,30 @@ class NavigationServices {
 
   navigateToUserConfirmations() {
     this.navigate(screens.UserConfirmations);
+  }
+
+  navigateToScanQROrRecover(params) {
+    this.navigate(screens.ScanQROrRecover, params);
+  }
+
+  navigateToSuccessfullyImported(params) {
+    this.navigate(screens.SuccessfullyImported, params);
+  }
+
+  navigateToWelcomeOfficially(params) {
+    this.navigate(screens.WelcomeOfficially, params);
+  }
+
+  navigateToAttention(params) {
+    this.navigate(screens.Attention, params);
+  }
+
+  navigateToCheckBackupWords(params) {
+    this.navigate(screens.CheckBackupWords, params);
+  }
+
+  navigateToFirstAccount() {
+    this.navigate(screens.FirstAccount);
   }
 }
 

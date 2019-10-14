@@ -1,19 +1,14 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import {
-  HeaderTitle,
-  Text,
-  Button,
-  Touchable,
-} from '../../components';
+import { HeaderTitle, Text, Button } from '../../components';
 import { t } from '../../i18n';
-import { headerStyle, dimensions } from '../../styles';
+import { headerStyle } from '../../styles';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const onboardingWelcome = require('../../../assets/onboardingWelcome.png');
 
 function Welcome() {
-  console.log('dimensions', dimensions.height);
   return (
     <View style={s.container}>
       <View style={s.topTextContainer}>
@@ -25,17 +20,11 @@ function Welcome() {
         </Text>
       </View>
       <Image source={onboardingWelcome} style={s.image} />
-      <View style={s.containerBottom}>
-        <Button
-          title={t('welcome.textButton')}
-          containerStyle={s.containerButton}
-        />
-        <Touchable style={s.containerBottomText}>
-          <Text semiBold style={s.takeMeBack}>
-            {t('welcome.textBottom')}
-          </Text>
-        </Touchable>
-      </View>
+      <Button
+        onPress={() => NavigationService.navigateToScanQROrRecover()}
+        title={t('welcome.textButton')}
+        containerStyle={s.containerButton}
+      />
     </View>
   );
 }
