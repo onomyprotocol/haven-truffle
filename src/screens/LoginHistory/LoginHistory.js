@@ -8,14 +8,14 @@ const data = [
   {
     id: '1',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
     location: 'St. Petersburg, Russia',
   },
   {
     id: '2',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Android',
     location: 'St. Petersburg, Russia',
   },
@@ -29,14 +29,14 @@ const data = [
   {
     id: '4',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
     location: 'St. Petersburg, Russia',
   },
   {
     id: '5',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
 
     location: 'St. Petersburg, Russia',
@@ -44,7 +44,7 @@ const data = [
   {
     id: '6',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
 
     location: 'St. Petersburg, Russia',
@@ -52,7 +52,7 @@ const data = [
   {
     id: '7',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
 
     location: 'St. Petersburg, Russia',
@@ -60,7 +60,7 @@ const data = [
   {
     id: '8',
     date: 'Today, 9:15 AM',
-    connectStatus: 'denied',
+    connectStatus: 'approved',
     platform: 'Mac OS',
 
     location: 'St. Petersburg, Russia',

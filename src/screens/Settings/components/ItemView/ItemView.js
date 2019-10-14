@@ -9,7 +9,7 @@ function ItemView() {
   return (
     <Touchable
       style={s.container}
-      onPress={() => NavigationService.goToRecoveryWords()}
+      onPress={() => NavigationService.navigateToRecoveryWords()}
     >
       <Text medium style={s.text}>
         {t('settings.viewBackup')}

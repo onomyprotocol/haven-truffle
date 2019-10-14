@@ -9,7 +9,7 @@ const TabAccounts = createStackNavigator(
     [screens.LoginHistory]: LoginHistory,
   },
   {
-    initialRouteName: screens.MyAccounts,
+    initialRouteName: screens.LoginHistory,
     headerLayoutPreset: 'center',
     ...defaultAppNavigationOptions,
   },

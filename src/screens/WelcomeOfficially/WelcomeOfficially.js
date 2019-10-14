@@ -11,6 +11,7 @@ import {
   Avatar,
 } from '../../components';
 import s from './styles';
+import { NavigationService, AsyncStore } from '../../services';
 
 function WelcomeOfficially() {
   return (
@@ -35,6 +36,10 @@ function WelcomeOfficially() {
       <Button
         title={t('welcomeOfficially.button')}
         containerStyle={s.containerButton}
+        onPress={() => {
+          NavigationService.navigateToApp();
+          AsyncStore().setIsFirstInput();
+        }}
       />
     </Container>
   );

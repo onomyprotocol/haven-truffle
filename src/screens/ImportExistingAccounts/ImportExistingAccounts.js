@@ -6,6 +6,7 @@ import { headerStyle } from '../../styles';
 import { BackButton, HeaderTitle, Button } from '../../components';
 import { List, Header } from './components';
 import s from './styles';
+import { NavigationService } from '../../services';
 
 const data = [
   { id: '1', fullName: 'Michael Glazyrin', title: 'Relictos' },
@@ -19,6 +20,9 @@ function ImportExistingAccounts() {
       <Header />
       <List data={data} />
       <Button
+        onPress={() =>
+          NavigationService.navigateToSuccessfullyImported()
+        }
         title={t('importExistingAccounts.textButton')}
         containerStyle={s.containerButton}
       />

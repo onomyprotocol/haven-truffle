@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { FlatList, View } from 'react-native';
+import T from 'prop-types';
 import {
   HeaderTitle,
   BackButton,
@@ -20,10 +21,12 @@ const data = [
   { text: 'Masacre', id: '6' },
 ];
 
-function CheckBackupWords() {
+function CheckBackupWords({ navigation }) {
+  const onPress = navigation.getParam('onPress', () => {});
+
   const [activeItem, setActiveItem] = useState('');
 
-  const onPress = useCallback((text) => {
+  const onPressItem = useCallback((text) => {
     setActiveItem(text);
   });
 
@@ -47,7 +50,7 @@ function CheckBackupWords() {
         renderItem={({ item }) => (
           <ListItem
             text={item.text}
-            onPress={onPress}
+            onPress={onPressItem}
             active={activeItem === item.text}
           />
         )}
@@ -57,11 +60,16 @@ function CheckBackupWords() {
         <Button
           title={t('checkBackupWords.button')}
           containerStyle={s.containerButton}
+          onPress={onPress}
         />
       </View>
     </View>
   );
 }
+
+CheckBackupWords.propTypes = {
+  navigation: T.object,
+};
 
 CheckBackupWords.navigationOptions = {
   tabBarVisible: false,

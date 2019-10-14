@@ -1,11 +1,14 @@
 import mirror from 'mirror-to-object-pairs';
 
 export default mirror([
+  'App',
   'Auth',
   'Accounts',
   'Wallet',
   'ConfirmationsTab',
   'Settings',
+  'Onboarding',
+  'Onboarding2',
 
   'UserConfirmations',
   'SelectAccountToLogin',

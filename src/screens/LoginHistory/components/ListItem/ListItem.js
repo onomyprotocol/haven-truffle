@@ -36,8 +36,8 @@ function ListItem({
             style={[
               s.connectStatus,
               connectStatus === typeConnectStatus.DENIED
-                ? s.connectStatusGreen
-                : s.connectStatusRed,
+                ? s.connectStatusRed
+                : s.connectStatusGreen,
             ]}
           >
             {t(`loginHistory.${connectStatus}`)}
