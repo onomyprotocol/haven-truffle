@@ -1,5 +1,4 @@
 import React from 'react';
-import { FlatList } from 'react-native';
 import T from 'prop-types';
 
 import ListItem from '../ListItem/ListItem';
@@ -7,20 +6,18 @@ import s from './styles';
 
 function List({ data }) {
   return (
-    <FlatList
-      style={s.container}
-      data={data}
-      renderItem={({ item, index }) => (
+    <>
+      {data.map((item, index) => (
         <ListItem
           containerStyle={index % 2 && s.itemBG}
           fullName={item.fullName}
           title={item.title}
           onPress={() => {}}
           listIcon={['green', 'blue']}
+          key={item.id}
         />
-      )}
-      keyExtractor={({ id }) => id}
-    />
+      ))}
+    </>
   );
 }
 

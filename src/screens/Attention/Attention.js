@@ -7,9 +7,10 @@ import {
   Button,
 } from '../../components';
 import { t } from '../../i18n';
-import { attention } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
+
+const attention = require('../../../assets/attention.png');
 
 function Attention() {
   return (

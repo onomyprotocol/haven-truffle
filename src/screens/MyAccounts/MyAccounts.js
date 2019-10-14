@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { headerStyle } from '../../styles';
-import { BackButton, HeaderTitle } from '../../components';
-import { Section } from './components';
+import { HeaderTitle } from '../../components';
+import { Section, HeaderRight, EmptyListAccount } from './components';
 import s from './styles';
 
 const data = [
@@ -17,20 +17,33 @@ const data = [
   { id: '8', fullName: 'Michael Glazyrin', title: 'Relictos' },
 ];
 
+const isEmpty = false;
+
 function MyAccounts() {
   return (
-    <ScrollView style={s.container}>
-      <Section text="some text" data={data} />
-      <Section text="some text" data={data} />
-      <Section text="some text" data={data} />
-    </ScrollView>
+    <View style={s.container}>
+      {isEmpty ? (
+        <EmptyListAccount />
+      ) : (
+        <ScrollView style={s.container}>
+          <Section text="some text" data={data} />
+          <Section text="some text" data={data} />
+          <Section text="some text" data={data} />
+        </ScrollView>
+      )}
+    </View>
   );
 }
 
 MyAccounts.navigationOptions = {
   ...headerStyle,
-  headerLeft: <BackButton containerStyle={s.leftHeader} />,
-  headerTitle: <HeaderTitle textKey="selectAccountToLogin.title" />,
+  headerLeft: (
+    <HeaderTitle
+      textKey="myAccounts.headerTitle"
+      style={s.headerLeft}
+    />
+  ),
+  headerRight: <HeaderRight />,
 };
 
 export default MyAccounts;

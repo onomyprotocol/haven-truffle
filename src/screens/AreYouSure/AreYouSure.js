@@ -8,9 +8,10 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-import { areYouSure } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
+
+const areYouSure = require('../../../assets/areYouSure.png');
 
 function AreYouSure() {
   return (

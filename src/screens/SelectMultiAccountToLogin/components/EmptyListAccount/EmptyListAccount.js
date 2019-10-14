@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { t } from '../../../../i18n';
-import { LogoIcon } from '../../../../assets/svg';
+import { LogoIcon } from '../../../../components/icons';
 import s from './styles';
 import { Text } from '../../../../components';
 

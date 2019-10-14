@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import T from 'prop-types';
 
 import { Touchable, Text, IconGrade } from '../../../../components';
-import { DownArrow, RightArrow } from '../../../../components/icons';
+import { DownArrow, UpArrow } from '../../../../components/icons';
 import List from '../List/List';
 import s from './styles';
 
@@ -18,7 +18,7 @@ function Section({ text, data = [] }) {
         <Text semiBold style={s.text}>
           {text}
         </Text>
-        {active ? <DownArrow /> : <RightArrow />}
+        {active ? <UpArrow /> : <DownArrow />}
       </Touchable>
       {active ? <List data={data} /> : null}
     </>

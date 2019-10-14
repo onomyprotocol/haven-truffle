@@ -16,7 +16,8 @@
     "recoverAccount": "Recover Account",
     "enterWord": "Enter word",
     "approved": "Approved",
-    "denied": "Denied"
+    "denied": "Denied",
+    "tapThereToScanQR": "Tap there to scan QR"
   },
   "selectAccountToLogin": {
     "title": "Select Account To Login"
@@ -110,5 +111,10 @@
     "headerTitle": "Login History",
     "approved": "Approved",
     "denied": "Denied"
+  },
+  "myAccounts": {
+    "headerTitle": "My Accounts",
+    "title": "Welcome",
+    "textInfo": "Here is where your accounts will be listed. To add your first account, scan a Haven QR code or recover an existing account with your backup words in settings"
   }
 }

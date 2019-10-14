@@ -32,5 +32,5 @@ const routes = {
 
 export default createStackNavigator(routes, {
   headerLayoutPreset: 'center',
-  initialRouteName: screens.SelectMultiAccountToLogin,
+  initialRouteName: screens.ScanQROrRecover,
 });
