@@ -1,4 +1,5 @@
 export { default as Avatar } from './Avatar/Avatar';
+export { default as AnimationQR } from './AnimationQR/AnimationQR';
 export { default as Empty } from './Empty/Empty';
 export { default as Touchable } from './Touchable';
 export { default as Text } from './Text/Text';

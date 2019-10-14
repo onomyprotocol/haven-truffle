@@ -8,9 +8,10 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-import { successfullyImported } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
+
+const successfullyImported = require('../../../assets/successfullyImported.png');
 
 function SuccessfullyImported() {
   return (

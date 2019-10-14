@@ -2,7 +2,7 @@ import React from 'react';
 import { Touchable, Text } from '../../../../components';
 import s from './styles';
 import { t } from '../../../../i18n';
-import { FlashCardIcon } from '../../../../assets/svg';
+import { FlashCardIcon } from '../../../../components/icons';
 import { NavigationService } from '../../../../services';
 
 function ItemRecover() {

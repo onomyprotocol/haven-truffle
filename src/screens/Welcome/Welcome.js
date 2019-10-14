@@ -7,9 +7,10 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-import { onboardingWelcome } from '../../assets/png';
 import { headerStyle, dimensions } from '../../styles';
 import s from './styles';
+
+const onboardingWelcome = require('../../../assets/onboardingWelcome.png');
 
 function Welcome() {
   console.log('dimensions', dimensions.height);

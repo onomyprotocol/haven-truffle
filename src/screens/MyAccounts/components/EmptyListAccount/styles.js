@@ -1,38 +1,36 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../../../styles';
+import {
+  scaleFontSize,
+  scaleHeight,
+  isSmallPhone,
+  isLargePhone,
+} from '../../../../utils';
 
-const SIZE_IMG_CONTAINER = 164;
-
-const s = StyleSheet.create({
+const styles = StyleSheet.create({
+  header: {
+    marginLeft: 24,
+  },
   container: {
-    marginTop: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  containerImg: {
-    width: SIZE_IMG_CONTAINER,
-    height: SIZE_IMG_CONTAINER,
-    borderRadius: SIZE_IMG_CONTAINER / 2,
-    borderWidth: 2,
-    borderColor: colors.primary,
-    padding: 10,
-  },
-  containerLogo: {
     flex: 1,
-    borderRadius: SIZE_IMG_CONTAINER / 2,
-    backgroundColor: colors.gray,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  text: {
+  textContainer: {
+    alignItems: 'center',
     paddingHorizontal: 24,
-    fontSize: 14,
+    marginTop: isSmallPhone || isLargePhone ? 10 : scaleHeight(65),
+  },
+  title: {
+    fontSize: scaleFontSize(24, 4),
     color: colors.blueDark,
-    marginTop: 32,
-    lineHeight: 20,
+    textAlign: 'center',
+  },
+  textInfo: {
+    fontSize: scaleFontSize(14),
+    marginTop: scaleHeight(16),
+    color: colors.grayDark,
     textAlign: 'center',
   },
 });
 
-export default s;
+export default styles;

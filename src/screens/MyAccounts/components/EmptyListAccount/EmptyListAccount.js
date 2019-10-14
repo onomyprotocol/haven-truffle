@@ -1,22 +1,21 @@
 import React from 'react';
 import { View } from 'react-native';
-
+import { Text, AnimationQR } from '../../../../components';
 import { t } from '../../../../i18n';
-import { LogoIcon } from '../../../../assets/svg';
 import s from './styles';
-import { Text } from '../../../../components';
 
 function EmptyListAccount() {
   return (
     <View style={s.container}>
-      <View style={s.containerImg}>
-        <View style={s.containerLogo}>
-          <LogoIcon />
-        </View>
+      <View style={s.textContainer}>
+        <Text semiBold style={s.title}>
+          {t('myAccounts.title')}
+        </Text>
+        <Text medium style={s.textInfo}>
+          {t('myAccounts.textInfo')}
+        </Text>
       </View>
-      <Text style={s.text}>
-        {t('SelectAccountToLogin.EmptyListAccount')}
-      </Text>
+      <AnimationQR withArrow />
     </View>
   );
 }

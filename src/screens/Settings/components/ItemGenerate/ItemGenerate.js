@@ -2,7 +2,7 @@ import React from 'react';
 import { Touchable, Text } from '../../../../components';
 import s from './styles';
 import { t } from '../../../../i18n';
-import { UpLoadIcon } from '../../../../assets/svg';
+import { UpLoadIcon } from '../../../../components/icons';
 
 function ItemGenerate() {
   return (

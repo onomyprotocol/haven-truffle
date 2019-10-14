@@ -1,6 +1,6 @@
 import React from 'react';
 import { Touchable, Text } from '../../../../components';
-import { LockIcon } from '../../../../assets/svg';
+import { LockIcon } from '../../../../components/icons';
 import { NavigationService } from '../../../../services';
 import s from './styles';
 import { t } from '../../../../i18n';

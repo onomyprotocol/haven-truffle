@@ -8,9 +8,10 @@ import {
   Touchable,
 } from '../../components';
 import { t } from '../../i18n';
-import { firstAccount } from '../../assets/png';
 import { headerStyle } from '../../styles';
 import s from './styles';
+
+const firstAccount = require('../../../assets/firstAccount.png');
 
 function FirstAccount() {
   return (

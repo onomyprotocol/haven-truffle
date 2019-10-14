@@ -3,7 +3,7 @@ import { View, ViewPropTypes } from 'react-native';
 import T from 'prop-types';
 
 import { Avatar, Touchable, Text } from '../../../../components';
-import { CheckIcon } from '../../../../assets/svg';
+import { CheckIcon } from '../../../../components/icons';
 import s from './styles';
 
 function ListItem({

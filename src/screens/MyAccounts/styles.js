@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../styles';
 
 const s = StyleSheet.create({
+  headerLeft: {
+    paddingLeft: 24,
+  },
   container: {
     flex: 1,
     backgroundColor: colors.white,
