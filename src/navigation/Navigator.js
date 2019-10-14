@@ -4,8 +4,10 @@ import AuthNavigator from './AuthNavigator';
 import OnboardingNavigator from './OnboardingNavigator';
 import Onboarding2Navigator from './Onboarding2Navigator';
 import screens from './screens';
+import { Empty } from '../components';
 
 const routes = {
+  [screens.Empty]: Empty,
   [screens.App]: AppTabNavigation,
   [screens.Auth]: AuthNavigator,
   [screens.Onboarding]: OnboardingNavigator,
@@ -13,5 +15,5 @@ const routes = {
 };
 
 export default createSwitchNavigator(routes, {
-  initialRouteName: screens.AppTabNavigation,
+  initialRouteName: screens.Empty,
 });

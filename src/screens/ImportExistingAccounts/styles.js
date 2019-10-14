@@ -1,11 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles';
-import { scaleHeight, scaleFontSize } from '../../utils';
+import { scaleHeight } from '../../utils';
 
 const s = StyleSheet.create({
-  headerTitle: {
-    fontSize: scaleFontSize(16),
-  },
   container: {
     flex: 1,
     backgroundColor: colors.white,

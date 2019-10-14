@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
-import { BackButton, HeaderTitle, Button } from '../../components';
+import { HeaderTitle, Button } from '../../components';
 import { List, Header } from './components';
 import s from './styles';
 import { NavigationService } from '../../services';
@@ -32,7 +32,6 @@ function ImportExistingAccounts() {
 
 ImportExistingAccounts.navigationOptions = {
   ...headerStyle,
-  headerLeft: <BackButton containerStyle={s.leftHeader} />,
   headerTitle: (
     <HeaderTitle
       style={s.headerTitle}
