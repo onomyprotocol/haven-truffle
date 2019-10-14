@@ -15,6 +15,9 @@ const s = StyleSheet.create({
     flex: 1,
     margin: 8,
   },
+  contentContainer: {
+    flex: 1,
+  },
   text: {
     color: colors.blueDark,
     fontSize: 14,

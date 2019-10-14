@@ -9,6 +9,7 @@ function ListItem({ text, onPress, active }) {
   return (
     <Touchable
       style={[s.container, active && s.activeBg]}
+      containerStyle={s.contentContainer}
       onPress={() => onPress(text)}
     >
       <View>

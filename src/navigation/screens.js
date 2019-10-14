@@ -1,6 +1,7 @@
 import mirror from 'mirror-to-object-pairs';
 
 export default mirror([
+  'Empty',
   'App',
   'Auth',
   'Accounts',
