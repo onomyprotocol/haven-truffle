@@ -11,6 +11,7 @@ import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
+import { screenKey } from '../../constants';
 
 const data = [
   { text: 'After', number: '1' },
@@ -54,7 +55,11 @@ function RecoveryHavenId() {
           <Button
             title={t('common.recoverAccount')}
             containerStyle={s.containerButton}
-            onPress={() => NavigationService.goToAreYouSure()}
+            onPress={() =>
+              NavigationService.navigateToAreYouSure({
+                screenKey: screenKey.SETTINGS,
+              })
+            }
           />
         </View>
       )}

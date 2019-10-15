@@ -10,6 +10,7 @@ import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
+import { screenKey } from '../../constants';
 
 const attention = require('../../../assets/attention.png');
 
@@ -34,15 +35,7 @@ function Attention() {
         containerStyle={s.containerButton}
         onPress={() =>
           NavigationService.navigateToRecoveryWords({
-            buttonTextKey: 'common.continue',
-            onPress: () =>
-              NavigationService.navigateToCheckBackupWords({
-                onPress: () =>
-                  NavigationService.navigateToFirstAccount({
-                    onPress: () =>
-                      NavigationService.navigateToFirstAccount(),
-                  }),
-              }),
+            screenKey: screenKey.ONBOARDING,
           })
         }
       />

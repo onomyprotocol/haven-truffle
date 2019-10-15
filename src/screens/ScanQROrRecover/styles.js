@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginRight: 5,
   },
+  link: {
+    zIndex: 2,
+  },
   image: {
     width: '160%',
     height: '100%',

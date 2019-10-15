@@ -11,6 +11,7 @@ import {
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
+import { screenKey } from '../../constants';
 import { NavigationService } from '../../services';
 
 const qrAnimation = require('../../animations/qr.json');
@@ -30,11 +31,12 @@ function ScanQROrRecover() {
             {t('scanQROrRecover.bottomTextInfo')}
           </Text>
           <Touchable
+            style={s.link}
+            borderless
+            hitSlop={8}
             onPress={() =>
               NavigationService.navigateToRecoverExistingAccount({
-                buttonTextKey: 'common.recoverAccount',
-                onPress: () =>
-                  NavigationService.navigateToAttention(),
+                screenKey: screenKey.ONBOARDING,
               })
             }
           >
