@@ -10,40 +10,36 @@ import {
 } from '../../components';
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
+import {
+  helperTitleText,
+  helperInfoText,
+  helperButtonText,
+  helperButtonPress,
+} from './helpers';
 import s from './styles';
 import { NavigationService } from '../../services';
 
 const areYouSure = require('../../../assets/areYouSure.png');
 
 function AreYouSure({ navigation }) {
-  const onPress = navigation.getParam('onPress', () => {});
-
-  const buttonTextKey = navigation.getParam(
-    'buttonTextKey',
-    'areYouSure.continue',
-  );
-
-  const infoTextKey = navigation.getParam(
-    'infoTextKey',
-    'areYouSure.textInfo',
-  );
+  const screenKey = navigation.getParam('screenKey', 'settings');
 
   return (
     <View style={s.container}>
       <View style={s.topTextContainer}>
         <Text semiBold style={s.title}>
-          {t('areYouSure.title')}
+          {helperTitleText(screenKey)}
         </Text>
         <Text bold style={s.textInfo}>
-          {t(infoTextKey)}
+          {helperInfoText(screenKey)}
         </Text>
       </View>
       <Image source={areYouSure} style={s.image} />
       <View>
         <Button
-          title={t(buttonTextKey)}
+          title={helperButtonText(screenKey)}
           containerStyle={s.containerButton}
-          onPress={onPress}
+          onPress={helperButtonPress(screenKey)}
         />
         <Touchable
           onPress={() => NavigationService.goBack()}

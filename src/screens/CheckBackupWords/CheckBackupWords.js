@@ -9,6 +9,7 @@ import {
 } from '../../components';
 import { ListItem } from './components';
 import { t } from '../../i18n';
+import { helperButtonPress } from './helpers';
 import { headerStyle } from '../../styles';
 import s from './styles';
 
@@ -22,7 +23,7 @@ const data = [
 ];
 
 function CheckBackupWords({ navigation }) {
-  const onPress = navigation.getParam('onPress', () => {});
+  const screenKey = navigation.getParam('screenKey', 'onboarding');
 
   const [activeItem, setActiveItem] = useState('');
 
@@ -60,7 +61,7 @@ function CheckBackupWords({ navigation }) {
         <Button
           title={t('checkBackupWords.button')}
           containerStyle={s.containerButton}
-          onPress={onPress}
+          onPress={helperButtonPress(screenKey)}
         />
       </View>
     </View>

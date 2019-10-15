@@ -11,6 +11,7 @@ import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
+import screenKey from '../../constants/screenKey';
 
 const successfullyImported = require('../../../assets/successfullyImported.png');
 
@@ -35,16 +36,7 @@ function SuccessfullyImported() {
           containerStyle={s.containerButton}
           onPress={() =>
             NavigationService.navigateToRecoveryWords({
-              buttonTextKey: 'common.continue',
-              onPress: () =>
-                NavigationService.navigateToAreYouSure({
-                  infoTextKey: 'areYouSure.textInfoOnboarding2',
-                  onPress: () =>
-                    NavigationService.navigateToCheckBackupWords({
-                      onPress: () =>
-                        NavigationService.navigateToApp(),
-                    }),
-                }),
+              screenKey: screenKey.ONBOARDING_2,
             })
           }
         />

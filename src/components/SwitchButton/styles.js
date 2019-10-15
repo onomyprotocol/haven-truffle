@@ -10,7 +10,9 @@ const styles = StyleSheet.create({
     width: dimensions.indent * 2,
     height: dimensions.indent * 0.8,
     borderRadius: 50,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
+    borderColor: colors.primary,
+    borderWidth: StyleSheet.hairlineWidth,
   },
   enabledLine: {
     backgroundColor: colors.primary,

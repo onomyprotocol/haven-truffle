@@ -3,16 +3,12 @@ import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import T from 'prop-types';
 import { Text, Button } from '../../../../components';
+import { helperButtonPress, helperButtonText } from './helpers';
 import { t } from '../../../../i18n';
 import s from './styles';
 
 function Footer({ navigation }) {
-  const buttonTextKey = navigation.getParam(
-    'buttonTextKey',
-    'common.done',
-  );
-
-  const onPress = navigation.getParam('onPress', () => {});
+  const screenKey = navigation.getParam('screenKey', 'settings');
 
   return (
     <View style={s.bottomContainer}>
@@ -20,9 +16,9 @@ function Footer({ navigation }) {
         {t('recoveryWords.textBottom')}
       </Text>
       <Button
-        title={t(buttonTextKey)}
+        title={helperButtonText(screenKey)}
         containerStyle={s.containerButton}
-        onPress={onPress}
+        onPress={helperButtonPress(screenKey)}
       />
     </View>
   );

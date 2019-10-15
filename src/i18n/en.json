@@ -43,7 +43,7 @@
   "areYouSure": {
     "headerTitle": "Are you sure?",
     "title": "Warning",
-    "textInfo": "Recovering another Haven ID and its associated accounts will replace your current ID & associated accounts. Only one Haven ID can be active at a time.\n\nDo you want to continue?",
+    "textInfoSettings": "Recovering another Haven ID and its associated accounts will replace your current ID & associated accounts. Only one Haven ID can be active at a time.\n\nDo you want to continue?",
     "continue": "Yes, continue!",
     "textBottom": "Take me back",
     "safe":"Yes, they’re safe!",
