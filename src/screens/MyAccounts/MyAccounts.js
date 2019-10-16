@@ -45,7 +45,7 @@ MyAccounts.navigationOptions = {
   ),
   headerRight: (
     <HeaderRight
-      onPress={() => NavigationService.navigateToLoginHistory()}
+      onPress={() => NavigationService.navigateToCreateNewAccount()}
     />
   ),
 };

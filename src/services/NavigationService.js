@@ -74,6 +74,10 @@ class NavigationServices {
     this.navigate(screens.CheckBackupWords, params);
   }
 
+  navigateToCreateNewAccount(params) {
+    this.navigate(screens.CreateNewAccount, params);
+  }
+
   navigateToFirstAccount() {
     this.navigate(screens.FirstAccount);
   }

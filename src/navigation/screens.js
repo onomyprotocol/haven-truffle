@@ -22,6 +22,7 @@ export default mirror([
   'RecoverExistingAccount',
   'WelcomeOfficially',
   'CheckBackupWords',
+  'CreateNewAccount',
   'Attention',
   'FirstAccount',
   'ScanQROrRecover',

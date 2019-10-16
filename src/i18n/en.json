@@ -119,6 +119,12 @@
     "title": "Welcome",
     "textInfo": "Here is where your accounts will be listed. To add your first account, scan a Haven QR code or recover an existing account with your backup words in settings"
   },
+  "createNewAccount": {
+    "headerTitle": "Create New Account",
+    "title": "Welcome",
+    "textInfo": "Here’s where you can create a new account for our apps! Scan QR Code from Haven Social main page to start. Scanning from here won’t sign you in – it’ll kick off the sign-up process. ",
+    "textButton": "Scan QR Code"
+  },
   "walletTab": {
     "balances": "Balances",
     "assets": "Assets",
