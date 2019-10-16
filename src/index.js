@@ -16,7 +16,7 @@ function App() {
       if (isFirst) {
         await NavigationService.navigateToOnboarding();
       } else {
-        await NavigationService.navigateToOnboarding2();
+        await NavigationService.navigateToApp();
       }
       await StatusBarService.init();
       await SplashScreen.hide();
