@@ -7,6 +7,9 @@ export {
 export { default as AreYouSure } from './AreYouSure/AreYouSure';
 export { default as Attention } from './Attention/Attention';
 export {
+  default as CreateNewAccount,
+} from './CreateNewAccount/CreateNewAccount';
+export {
   default as CheckBackupWords,
 } from './CheckBackupWords/CheckBackupWords';
 export { default as Settings } from './Settings/Settings';
