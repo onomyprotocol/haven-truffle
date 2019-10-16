@@ -1,11 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import { Empty } from '../components';
 import screens from './screens';
 import { CustomTabBar, TabIcon } from './components';
 import TabConfirmations from './TabConfirmations';
 import TabSettings from './TabSettings';
 import TabAccounts from './TabAccounts';
+import TabWallet from './TabWallet';
 import { colors } from '../styles';
 
 const routes = {
@@ -19,7 +19,7 @@ const routes = {
     },
   },
   [screens.Wallet]: {
-    screen: Empty,
+    screen: TabWallet,
     navigationOptions: {
       tabBarIcon: (props) => (
         <TabIcon iconName="wallet" label="Wallet" {...props} />
@@ -54,7 +54,7 @@ const routes = {
 export default createBottomTabNavigator(routes, {
   headerMode: 'none',
   tabBarComponent: CustomTabBar,
-  initialRouteName: screens.Confirmation,
+  initialRouteName: screens.Wallet,
   tabBarOptions: {
     style: {
       backgroundColor: colors.lighterGray,

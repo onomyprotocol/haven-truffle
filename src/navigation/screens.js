@@ -11,6 +11,7 @@ export default mirror([
   'Onboarding',
   'Onboarding2',
 
+  'WalletTab',
   'UserConfirmations',
   'SelectAccountToLogin',
   'SelectMultiAccountToLogin',
