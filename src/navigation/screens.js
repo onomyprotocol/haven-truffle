@@ -10,6 +10,7 @@ export default mirror([
   'Settings',
   'Onboarding',
   'Onboarding2',
+  'QrScanner',
 
   'UserConfirmations',
   'SelectAccountToLogin',

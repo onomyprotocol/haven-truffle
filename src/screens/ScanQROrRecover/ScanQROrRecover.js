@@ -50,9 +50,7 @@ function ScanQROrRecover() {
         <Button
           title={t('scanQROrRecover.textButton')}
           containerStyle={s.containerButton}
-          onPress={() =>
-            NavigationService.navigateToWelcomeOfficially()
-          }
+          onPress={() => NavigationService.navigateToFirstAccount()}
         />
         <View style={s.imageContainer}>
           <LottieView autoPlay source={qrAnimation} style={s.image} />

@@ -186,6 +186,14 @@ PODS:
     - React-cxxreact (= 0.61.1)
     - React-jsi (= 0.61.1)
   - React-jsinspector (0.61.1)
+  - react-native-camera (3.7.2):
+    - React
+    - react-native-camera/RCT (= 3.7.2)
+    - react-native-camera/RN (= 3.7.2)
+  - react-native-camera/RCT (3.7.2):
+    - React
+  - react-native-camera/RN (3.7.2):
+    - React
   - react-native-splash-screen (3.2.0):
     - React
   - React-RCTActionSheet (0.61.1):
@@ -254,6 +262,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -274,7 +283,7 @@ DEPENDENCIES:
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -310,6 +319,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-camera:
+    :path: "../node_modules/react-native-camera"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
   React-RCTActionSheet:
@@ -363,6 +374,7 @@ SPEC CHECKSUMS:
   React-jsi: 61ff417c95e6c3af50fb96399037e80752fb5ce7
   React-jsiexecutor: ee45274419eb95614bbbadb98e20684c5f29996e
   React-jsinspector: 574d597112f9ea3d1b717f6fb62aef764c70dd6f
+  react-native-camera: 92877108e4c4d1d5a3f1c6f8733f1877ab1e8c1a
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   React-RCTActionSheet: af4d951113b1e068bb30611f91b984a7a73597ff
   React-RCTAnimation: 4f518d70bb6890b7c3d9d732f84786d6693ca297
@@ -383,4 +395,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1e297fa7e0261f3bf99b7215b5fd32e0fef6e78d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3

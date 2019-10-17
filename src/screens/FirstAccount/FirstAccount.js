@@ -36,9 +36,7 @@ function FirstAccount() {
         />
         <Touchable
           style={s.containerBottomText}
-          onPress={() =>
-            NavigationService.navigateToWelcomeOfficially()
-          }
+          onPress={() => NavigationService.navigateToQrScanner()}
         >
           <Text semiBold style={s.textBottom}>
             {t('firstAccount.textBottom')}

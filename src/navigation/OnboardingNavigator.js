@@ -8,6 +8,7 @@ import {
   CheckBackupWords,
   FirstAccount,
   WelcomeOfficially,
+  QrScanner,
 } from '../screens';
 import screens from './screens';
 
@@ -20,9 +21,10 @@ const routes = {
   [screens.CheckBackupWords]: CheckBackupWords,
   [screens.FirstAccount]: FirstAccount,
   [screens.WelcomeOfficially]: WelcomeOfficially,
+  [screens.QrScanner]: QrScanner,
 };
 
 export default createStackNavigator(routes, {
   headerLayoutPreset: 'center',
-  initialRouteName: screens.Welcome,
+  initialRouteName: screens.QrScanner,
 });
