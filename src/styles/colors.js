@@ -15,6 +15,7 @@ export default {
   lightRed: '#FF8170',
   transparent: 'rgba(0, 0, 0, 0)',
   border: '#DFE4ED',
+  yellow: '#E6BD43',
   cameraBackground: '#36364B',
 
   scanQROrRecover: {

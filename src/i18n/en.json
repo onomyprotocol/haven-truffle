@@ -17,6 +17,15 @@
     "enterWord": "Enter word",
     "approved": "Approved",
     "denied": "Denied",
+    "send": "Send",
+    "purchase": "Purchase",
+    "toMainnet": "To Mainnet",
+    "earnings": "Earnings",
+    "24h": "24h",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year",
+    "allTime": "All time",
     "tapThereToScanQR": "Tap there to scan QR",
     "confirm": "Confirm"
   },
@@ -140,6 +149,15 @@
       "havensOwned": "Havens owned",
       "badges": "Badges",
       "tickets": "Tickets"
+    },
+    "balancesTab": {
+      "withdraw": "Withdraw",
+      "earningTypes": "Earning Types",
+      "contentTips": "Content Tips",
+      "subscriptions": "Subscriptions",
+      "havens": "Havens",
+      "earned": "Earned",
+      "purchased": "Purchased"
     }
   }
 }
