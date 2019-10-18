@@ -82,8 +82,8 @@ class NavigationServices {
     this.navigate(screens.LoginHistory, params);
   }
 
-  navigateToQrScanner() {
-    this.navigate(screens.QrScanner);
+  navigateToQrScanner(confirmScreen) {
+    this.navigate(screens.QrScanner, { confirmScreen });
   }
 }
 

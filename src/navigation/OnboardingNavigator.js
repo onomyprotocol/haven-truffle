@@ -26,5 +26,5 @@ const routes = {
 
 export default createStackNavigator(routes, {
   headerLayoutPreset: 'center',
-  initialRouteName: screens.QrScanner,
+  initialRouteName: screens.Welcome,
 });
