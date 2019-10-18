@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../../styles';
+import { scaleFontSize } from '../../../utils';
 
 const styles = StyleSheet.create({
   labelContainer: {
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   label: {
-    fontSize: 14,
+    fontSize: scaleFontSize(14),
     color: colors.primary,
   },
 });
