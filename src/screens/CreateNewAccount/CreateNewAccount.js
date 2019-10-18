@@ -9,6 +9,8 @@ import {
 import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
+import { NavigationService } from '../../services';
+import screens from '../../navigation/screens';
 
 const createNewAccount = require('../../../assets/createNewAccount.png');
 
@@ -25,7 +27,11 @@ function CreateNewAccount() {
         </Text>
       </View>
       <Button
-        onPress={() => {}}
+        onPress={() =>
+          NavigationService.navigateToQrScanner(
+            screens.SelectAccountToLogin,
+          )
+        }
         title={t('createNewAccount.textButton')}
         containerStyle={s.containerButton}
       />

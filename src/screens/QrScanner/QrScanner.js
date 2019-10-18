@@ -14,7 +14,7 @@ import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
-import { screenKey } from '../../constants';
+import screens from '../../navigation/screens';
 
 function QrScanner() {
   const [code, setCode] = useState(null);
@@ -28,14 +28,11 @@ function QrScanner() {
 
   function onConfirm() {
     switch (confirmScreen) {
-      case screenKey.WELCOME_OFFICIALLY:
+      case screens.WelcomeOfficially:
         return NavigationService.navigateToWelcomeOfficially();
 
-      // case screenKey.TEST:
-      //   return NavigationService.naviteToTest();
-
-      // case screenKey.TEST2:
-      //   return NavigationService.naviteToTest2();
+      // case screens.SelectAccountToLogin:
+      //   return NavigationService.navigateToSelectAccountToLogin();
 
       default:
         return () => {};
@@ -93,7 +90,7 @@ function QrScanner() {
             ? t('qrScanner.qrCodeScanned')
             : t('qrScanner.description')}
         </Text>
-        {!code && (
+        {code && (
           <Fragment>
             <Button
               onPress={() => onConfirm()}

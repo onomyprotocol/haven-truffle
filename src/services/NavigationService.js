@@ -89,6 +89,10 @@ class NavigationServices {
   navigateToQrScanner(confirmScreen) {
     this.navigate(screens.QrScanner, { confirmScreen });
   }
+
+  navigateToSelectAccountToLogin() {
+    this.navigate(screens.SelectAccountToLogin);
+  }
 }
 
 export default new NavigationServices();
