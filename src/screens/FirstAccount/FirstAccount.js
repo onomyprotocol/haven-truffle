@@ -11,6 +11,7 @@ import { t } from '../../i18n';
 import { headerStyle } from '../../styles';
 import s from './styles';
 import { NavigationService } from '../../services';
+import { screenKey } from '../../constants';
 
 const firstAccount = require('../../../assets/firstAccount.png');
 
@@ -33,13 +34,13 @@ function FirstAccount() {
         <Button
           title={t('firstAccount.textButton')}
           containerStyle={s.containerButton}
-        />
-        <Touchable
-          style={s.containerBottomText}
           onPress={() =>
-            NavigationService.navigateToWelcomeOfficially()
+            NavigationService.navigateToQrScanner(
+              screenKey.WELCOME_OFFICIALLY,
+            )
           }
-        >
+        />
+        <Touchable style={s.containerBottomText} onPress={() => {}}>
           <Text semiBold style={s.textBottom}>
             {t('firstAccount.textBottom')}
           </Text>

@@ -44,4 +44,5 @@ export {
 } from './ImportExistingAccounts/ImportExistingAccounts';
 export { default as MyAccounts } from './MyAccounts/MyAccounts';
 export { default as LoginHistory } from './LoginHistory/LoginHistory';
+export { default as QrScanner } from './QrScanner/QrScanner';
 export { default as WalletTab } from './WalletTab/WalletTab';

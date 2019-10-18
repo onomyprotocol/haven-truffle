@@ -17,7 +17,8 @@
     "enterWord": "Enter word",
     "approved": "Approved",
     "denied": "Denied",
-    "tapThereToScanQR": "Tap there to scan QR"
+    "tapThereToScanQR": "Tap there to scan QR",
+    "confirm": "Confirm"
   },
   "selectAccountToLogin": {
     "title": "Select Account To Login"
@@ -118,6 +119,12 @@
     "headerTitle": "My Accounts",
     "title": "Welcome",
     "textInfo": "Here is where your accounts will be listed. To add your first account, scan a Haven QR code or recover an existing account with your backup words in settings"
+  },
+  "qrScanner": {
+    "headerTitle": "Scan QR Code",
+    "description": "Scan QR Code from Haven Social main page to verify yourself.",
+    "qrCodeScanned": "QR Code scanned.\nConfirm the emojis are the same to ensure a secure scan",
+    "itDoesntMatch": "It doesn’t match!"
   },
   "createNewAccount": {
     "headerTitle": "Create New Account",
