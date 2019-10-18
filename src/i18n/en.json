@@ -125,5 +125,21 @@
     "description": "Scan QR Code from Haven Social main page to verify yourself.",
     "qrCodeScanned": "QR Code scanned.\nConfirm the emojis are the same to ensure a secure scan",
     "itDoesntMatch": "It doesn’t match!"
+  },
+  "createNewAccount": {
+    "headerTitle": "Create New Account",
+    "title": "Welcome",
+    "textInfo": "Here’s where you can create a new account for our apps! Scan QR Code from Haven Social main page to start. Scanning from here won’t sign you in – it’ll kick off the sign-up process. ",
+    "textButton": "Scan QR Code"
+  },
+  "walletTab": {
+    "balances": "Balances",
+    "assets": "Assets",
+    "history": "History",
+    "assetsTab": {
+      "havensOwned": "Havens owned",
+      "badges": "Badges",
+      "tickets": "Tickets"
+    }
   }
 }

@@ -12,6 +12,7 @@ export default mirror([
   'Onboarding2',
   'QrScanner',
 
+  'WalletTab',
   'UserConfirmations',
   'SelectAccountToLogin',
   'SelectMultiAccountToLogin',
@@ -22,6 +23,7 @@ export default mirror([
   'RecoverExistingAccount',
   'WelcomeOfficially',
   'CheckBackupWords',
+  'CreateNewAccount',
   'Attention',
   'FirstAccount',
   'ScanQROrRecover',

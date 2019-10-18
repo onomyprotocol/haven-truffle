@@ -7,6 +7,9 @@ export {
 export { default as AreYouSure } from './AreYouSure/AreYouSure';
 export { default as Attention } from './Attention/Attention';
 export {
+  default as CreateNewAccount,
+} from './CreateNewAccount/CreateNewAccount';
+export {
   default as CheckBackupWords,
 } from './CheckBackupWords/CheckBackupWords';
 export { default as Settings } from './Settings/Settings';
@@ -42,3 +45,4 @@ export {
 export { default as MyAccounts } from './MyAccounts/MyAccounts';
 export { default as LoginHistory } from './LoginHistory/LoginHistory';
 export { default as QrScanner } from './QrScanner/QrScanner';
+export { default as WalletTab } from './WalletTab/WalletTab';
