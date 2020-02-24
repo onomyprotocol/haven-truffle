@@ -1,9 +1,9 @@
-pragma solidity ^0.5.12;
+pragma solidity ^0.5.3;
 
 // import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/ownership/Ownable.sol";
 
-contract HavenAcctCont {
+contract AcctCont {
     function isDevAuthorized(address, address) public returns (bool) {}
 }
 
@@ -13,9 +13,9 @@ contract ERC20Token {
   function transferFrom(address, address, uint) public returns (bool);
 }
 
-contract HavenWalletContract is Ownable {
+contract WalletContract is Ownable {
 
-    HavenAcctCont ac; // Haven Account Contract
+    AcctCont ac; // Haven Account Contract (ac)
     ERC20Token kc; // Kudos contract (kc)
     uint256 contKudosBal; // Kudos held by contract
     
@@ -50,7 +50,7 @@ contract HavenWalletContract is Ownable {
     // Only contract owner may change Account Contract Address
     function setAccountContract(address _newAcctContAddr) public onlyOwner returns(bool success) {
         require(_newAcctContAddr != address(0));
-        ac = HavenAcctCont(_newAcctContAddr);
+        ac = AcctCont(_newAcctContAddr);
         return true;
     }
     
