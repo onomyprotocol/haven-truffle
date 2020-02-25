@@ -1,25 +1,25 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.6.3;
 
-// import "@openzeppelin/contracts/ownership/Ownable.sol";
-import "../node_modules/@openzeppelin/contracts/ownership/Ownable.sol";
+// import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract AcctCont {
     function isDevAuthorized(address, address) public returns (bool) {}
 }
 
 contract ERC20Token {
-  function allowance(address, address) public view returns (uint256);
-  function balanceOf(address) public view returns (uint256);
-  function transferFrom(address, address, uint) public returns (bool);
+  function allowance(address, address) public returns (uint256) {}
+  function balanceOf(address) public view returns (uint256) {}
+  function transferFrom(address, address, uint) public returns (bool) {}
 }
 
-contract WalletContract is Ownable {
+contract Wallets is Ownable {
 
     AcctCont ac; // Haven Account Contract (ac)
     ERC20Token kc; // Kudos contract (kc)
     uint256 contKudosBal; // Kudos held by contract
     
-    // The address of the Natural Rights Server Testing
+    // The address of the Natural Rights Server
     address public naturalRightsAddress;
 
     // The address of the Account Contract
@@ -27,6 +27,11 @@ contract WalletContract is Ownable {
     
     // The address of the Kudos Contract
     address public kudosContractAddress;
+    
+    constructor(address acctContAddr, address kudosContAddr) public {
+        ac = AcctCont(acctContAddr);
+        kc = ERC20Token(kudosContAddr);
+    }
 
     /// @dev Access modifier for NR-only functionality
     modifier onlyNR() {
@@ -72,7 +77,7 @@ contract WalletContract is Ownable {
         return true;
     }
     
-    // haven initializes the wallet structs to become active
+    // Add kudos from account
     function addKudos(address _acctAddr, uint256 value) public returns(bool success) {
         require(isDevAuthorized(_acctAddr), "msg.sender not authorized for account");
         require(kc.balanceOf(_acctAddr) >= value, "not enough tokens in sender's balance");

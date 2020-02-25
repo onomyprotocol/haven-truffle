@@ -1,13 +1,13 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.6.3;
 
-import "@openzeppelin/contracts/ownership/Ownable.sol";
-// import "../node_modules/@openzeppelin/contracts/ownership/Ownable.sol";
+// import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract AcctCont {
     function isDevAuthorized(address, address) public returns (bool) {}
 }
 
-contract HavenContract is Ownable {
+contract Havens is Ownable {
 
     AcctCont ac;
     
@@ -16,6 +16,10 @@ contract HavenContract is Ownable {
 
     // The address of the Account Contract
     address public accountContractAddress;
+
+    constructor(address acctContAddr) public {
+        ac = AcctCont(acctContAddr);
+    }
 
     /// @dev Access modifier for NR-only functionality
     modifier onlyNR() {
@@ -138,7 +142,8 @@ contract HavenContract is Ownable {
         haven[naturalRightsIdHash].havenName = _havenName;
         haven[naturalRightsIdHash].acctAddr = havenOwnerAcctAddr;
         haven[naturalRightsIdHash].isPrivate = _isPrivate;
-        haven[naturalRightsIdHash].listPointer = havenList.push(naturalRightsIdHash) - 1;
+        haven[naturalRightsIdHash].listPointer = havenList.length;
+        havenList.push(naturalRightsIdHash);
         havenName[havenNameHash] = naturalRightsIdHash;
         return true;
     }
@@ -165,7 +170,8 @@ contract HavenContract is Ownable {
         uint256 fromHavenHash = uint256(keccak256(bytes(_fromHaven)));
         uint256 toHavenHash = uint256(keccak256(bytes(_toHaven)));
         havenNameTransferQueue[toHavenHash].fromHaven = _fromHaven;
-        havenNameTransferQueue[toHavenHash].listPointer = havenNameTransferList.push(fromHavenHash) - 1;
+        havenNameTransferQueue[toHavenHash].listPointer = havenNameTransferList.length;
+        havenNameTransferList.push(fromHavenHash);
         return true;
     }
 
@@ -190,7 +196,7 @@ contract HavenContract is Ownable {
         uint256 keyToMove = havenNameTransferList[havenNameTransferList.length-1];
         havenNameTransferList[rowToDelete] = keyToMove;
         havenNameTransferQueue[keyToMove].listPointer = rowToDelete;
-        havenNameTransferList.length--;
+        havenNameTransferList.pop();
         return true;
     }
 
@@ -203,7 +209,7 @@ contract HavenContract is Ownable {
         uint256 keyToMove = havenList[havenList.length-1];
         havenList[rowToDelete] = keyToMove;
         haven[keyToMove].listPointer = rowToDelete;
-        havenList.length--;
+        havenList.pop();
         uint256 havenNameHash = uint256(keccak256(bytes(haven[havenHash].havenName)));
         delete havenName[havenNameHash];
         delete haven[havenHash].havenName; 

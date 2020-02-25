@@ -1,9 +1,9 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.6.3;
 
-import "../node_modules/@openzeppelin/contracts/ownership/Ownable.sol";
-// import "@openzeppelin/contracts/ownership/Ownable.sol";
+import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
+// import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
-contract AccountContract is Ownable {
+contract Accounts is Ownable {
 
     // The address of the Natural Rights Server Testing
     address public naturalRightsAddress;
@@ -155,7 +155,7 @@ contract AccountContract is Ownable {
             if (delegateLength > 1) {
                 delegatedSigner[_acctAddr][delegateIndex] = delegatedSigner[_acctAddr][delegateLength-1];
             }
-            delegatedSigner[_acctAddr].length--;
+            delegatedSigner[_acctAddr].pop();
             return true;
         } else {
             revert('Msg.sender is not authorized on this account');
@@ -188,8 +188,9 @@ contract AccountContract is Ownable {
                         uint256 naturalRightsIdHash = uint256(keccak256(bytes(_naturalRightsId)));
                         if(naturalRightsOwner[naturalRightsIdHash] == _acctAddr) {
                             userPub[_acctAddr].naturalRightsId = _naturalRightsId;
-                            userPub[_acctAddr].listPointer = userList.push(_acctAddr) - 1;
+                            userPub[_acctAddr].listPointer = userList.length;
                             setUserName(_acctAddr, _userName);
+                            userList.push(_acctAddr);
                             return true;
                         } else {
                             revert("Natural Rights ID is not mapped to msg.sender");
@@ -253,7 +254,8 @@ contract AccountContract is Ownable {
         }
         if(keccak256(bytes(userPub[confirmAddr].userName)) == keccak256(bytes(expectedUserName))) {
             userNameTransferQueue[confirmAddr].initiator = msg.sender;
-            userNameTransferQueue[confirmAddr].listPointer = userNameTransferList.push(confirmAddr) - 1;
+            userNameTransferQueue[confirmAddr].listPointer = userNameTransferList.length;
+            userNameTransferList.push(confirmAddr);
         }
         return true;
     }
@@ -280,7 +282,7 @@ contract AccountContract is Ownable {
                 address keyToMove = userNameTransferList[userNameTransferList.length-1];
                 userNameTransferList[rowToDelete] = keyToMove;
                 userNameTransferQueue[keyToMove].listPointer = rowToDelete;
-                userNameTransferList.length--;
+                userNameTransferList.pop();
                 return true;
             } else {
                 revert('Username mismatch: confirmer userName does not match initiators expected userName');
@@ -299,7 +301,7 @@ contract AccountContract is Ownable {
         address keyToMove = userList[userList.length-1];
         userList[rowToDelete] = keyToMove;
         userPub[keyToMove].listPointer = rowToDelete;
-        userList.length--;
+        userList.pop();
         uint256 userNameHash = uint256(keccak256(bytes(userPub[msg.sender].userName)));
         delete userNameOwner[userNameHash];
         delete userPub[msg.sender].userName; 
@@ -333,7 +335,8 @@ contract AccountContract is Ownable {
             revert('User exists');
         }
         setUserName(msg.sender, userName);
-        userPub[msg.sender].listPointer = userList.push(msg.sender) - 1;
+        userPub[msg.sender].listPointer = userList.length; 
+        userList.push(msg.sender);
         return true;
     }
 }
