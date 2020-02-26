@@ -78,7 +78,7 @@ contract Wallets is Ownable {
     }
     
     // Add kudos from account
-    function addKudos(address _acctAddr, uint256 value) public returns(bool success) {
+    function depositKudos(address _acctAddr, uint256 value) public returns(bool success) {
         require(isDevAuthorized(_acctAddr), "msg.sender not authorized for account");
         require(kc.balanceOf(_acctAddr) >= value, "not enough tokens in sender's balance");
         require(kc.allowance(_acctAddr, address(this)) >= value, "sender has not enough allowance");
@@ -89,8 +89,12 @@ contract Wallets is Ownable {
         contKudosBal += value;
         return true;
     }
+
+    function getAcctBal(address _acctAddr) public view returns(uint256 value) {
+        return wallet[_acctAddr].kudosBalance;
+    }
     
-    function getContractBalance() public view returns(uint256 value) {
+    function getContBal() public view returns(uint256 value) {
         return contKudosBal;
     }
 }

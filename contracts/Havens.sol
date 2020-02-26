@@ -28,6 +28,7 @@ contract Havens is Ownable {
     }
 
     struct havenStruct {
+        string naturalRightsId; // Natural Rights ID
         address acctAddr; // Haven owner
         string havenName; // Haven name
         bool isPrivate; // Haven private bool
@@ -116,6 +117,13 @@ contract Havens is Ownable {
         } 
         revert('Natural Rights Haven Id does not match a Haven Name');
     }
+
+    function getHavenIdFromName(string memory _havenName) public view returns(string memory) {
+        uint256 havenNameHash = uint256(keccak256(bytes(_havenName)));
+        require(havenName[havenNameHash] != 0, 'Haven Name does not exist');
+        uint256 naturalRightsIdHash = havenName[havenNameHash];
+        return haven[naturalRightsIdHash].naturalRightsId;
+    }
     
     // Is msg.sender authorized to sign for the account?
     function isDevAuthorized(address _acctAddr) public returns(bool isIndeed) {
@@ -140,6 +148,7 @@ contract Havens is Ownable {
         
         // Set Storage Values
         haven[naturalRightsIdHash].havenName = _havenName;
+        haven[naturalRightsIdHash].naturalRightsId = _naturalRightsId;
         haven[naturalRightsIdHash].acctAddr = havenOwnerAcctAddr;
         haven[naturalRightsIdHash].isPrivate = _isPrivate;
         haven[naturalRightsIdHash].listPointer = havenList.length;
@@ -176,7 +185,6 @@ contract Havens is Ownable {
     }
 
     function confirmTransferHavenName(string memory _toHaven, string memory _expectedHavenName) public returns(bool success) {
-        
         require(isDevHavenAuthorized(_toHaven), 'msg.sender not authorized for Haven');
         string memory fromHaven = havenNameTransferQueue[uint256(keccak256(bytes(_toHaven)))].fromHaven;
         require(isHavenSet(fromHaven) && isHavenSet(_toHaven), 'One or both Havens do not exist');
