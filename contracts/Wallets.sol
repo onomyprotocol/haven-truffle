@@ -61,7 +61,7 @@ contract Wallets is Ownable {
     
     // Only contract owner may change Kudos Contract Address
     function addKudosContract(address _newKudosContAddr) public onlyOwner returns(bool success) {
-        require(_newKudosContAddr != address(0));
+        require(_newKudosContAddr != address(0), "address must not equal 0");
         kc = ERC20Token(_newKudosContAddr);
         return true;
     }
@@ -92,6 +92,14 @@ contract Wallets is Ownable {
 
     function getAcctBal(address _acctAddr) public view returns(uint256 value) {
         return wallet[_acctAddr].kudosBalance;
+    }
+
+    function transferKudos(address _fromAcctAddr, address _toAcctAddr, uint256 value) public returns(bool success) {
+        require(isDevAuthorized(_fromAcctAddr), "msg.sender not authorized for account");
+        require(getAcctBal(_fromAcctAddr)>=value, "account balance too low");
+        wallet[_fromAcctAddr].kudosBalance -= value;
+        wallet[_toAcctAddr].kudosBalance += value;
+        return true;
     }
     
     function getContBal() public view returns(uint256 value) {
