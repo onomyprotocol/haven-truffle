@@ -3,14 +3,14 @@ pragma solidity ^0.6.3;
 // import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
-contract AcctCont {
-    function isDevAuthorized(address, address) public returns (bool) {}
+interface AcctCont {
+    function isDevAuthorized(address, address) external returns (bool);
 }
 
-contract ERC20Token {
-  function allowance(address, address) public returns (uint256) {}
-  function balanceOf(address) public view returns (uint256) {}
-  function transferFrom(address, address, uint) public returns (bool) {}
+interface ERC20Token {
+  function allowance(address, address) external returns (uint256);
+  function balanceOf(address) external returns (uint256);
+  function transferFrom(address, address, uint) external returns (bool);
 }
 
 contract Wallets is Ownable {
@@ -27,15 +27,24 @@ contract Wallets is Ownable {
     
     // The address of the Kudos Contract
     address public kudosContractAddress;
+
+    // The address of the Document Contract
+    address public documentContractAddress;
     
     constructor(address acctContAddr, address kudosContAddr) public {
         ac = AcctCont(acctContAddr);
         kc = ERC20Token(kudosContAddr);
     }
 
-    /// @dev Access modifier for NR-only functionality
+    // @dev Access modifier for NR-only functionality
     modifier onlyNR() {
-        require(msg.sender == naturalRightsAddress);
+        require(msg.sender == naturalRightsAddress, "not the NR Server");
+        _;
+    }
+
+    // @dev Access modifier for NR-only functionality
+    modifier onlyDocuments() {
+        require(msg.sender == documentContractAddress, "not the Document Server");
         _;
     }
 
@@ -47,22 +56,29 @@ contract Wallets is Ownable {
 
     // Only contract owner may change Natural Rights Server
     function setNaturalRightsServer(address _newNaturalRights) public onlyOwner returns(bool success) {
-        require(_newNaturalRights != address(0));
+        require(_newNaturalRights != address(0), "address must not equal 0");
         naturalRightsAddress = _newNaturalRights;
         return true;
     }
 
     // Only contract owner may change Account Contract Address
     function setAccountContract(address _newAcctContAddr) public onlyOwner returns(bool success) {
-        require(_newAcctContAddr != address(0));
+        require(_newAcctContAddr != address(0), "address must not equal 0");
         ac = AcctCont(_newAcctContAddr);
         return true;
     }
     
     // Only contract owner may change Kudos Contract Address
-    function addKudosContract(address _newKudosContAddr) public onlyOwner returns(bool success) {
+    function setKudosContract(address _newKudosContAddr) public onlyOwner returns(bool success) {
         require(_newKudosContAddr != address(0), "address must not equal 0");
         kc = ERC20Token(_newKudosContAddr);
+        return true;
+    }
+
+    // Only contract owner may change Document Contract Address
+    function setDocContract(address _newDocContAddr) public onlyOwner returns(bool success) {
+        require(_newDocContAddr != address(0), "address must not equal 0");
+        documentContractAddress = _newDocContAddr;
         return true;
     }
 
@@ -71,20 +87,12 @@ contract Wallets is Ownable {
         return ac.isDevAuthorized(_acctAddr, msg.sender);
     }
     
-    //
-    function newWallet(address _acctAddr) public onlyNR returns(bool success) {
-        wallet[_acctAddr] = walletStruct(0);
-        return true;
-    }
-    
     // Add kudos from account
     function depositKudos(address _acctAddr, uint256 value) public returns(bool success) {
         require(isDevAuthorized(_acctAddr), "msg.sender not authorized for account");
         require(kc.balanceOf(_acctAddr) >= value, "not enough tokens in sender's balance");
         require(kc.allowance(_acctAddr, address(this)) >= value, "sender has not enough allowance");
-        
         kc.transferFrom(_acctAddr, address(this), value);
-        
         wallet[_acctAddr].kudosBalance += value;
         contKudosBal += value;
         return true;
@@ -96,6 +104,13 @@ contract Wallets is Ownable {
 
     function transferKudos(address _fromAcctAddr, address _toAcctAddr, uint256 value) public returns(bool success) {
         require(isDevAuthorized(_fromAcctAddr), "msg.sender not authorized for account");
+        require(getAcctBal(_fromAcctAddr)>=value, "account balance too low");
+        wallet[_fromAcctAddr].kudosBalance -= value;
+        wallet[_toAcctAddr].kudosBalance += value;
+        return true;
+    }
+
+    function transferKudosDoc(address _fromAcctAddr, address _toAcctAddr, uint256 value) public onlyDocuments returns(bool success) {
         require(getAcctBal(_fromAcctAddr)>=value, "account balance too low");
         wallet[_fromAcctAddr].kudosBalance -= value;
         wallet[_toAcctAddr].kudosBalance += value;
