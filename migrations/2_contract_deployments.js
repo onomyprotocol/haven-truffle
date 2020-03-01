@@ -1,7 +1,9 @@
 const AccountContract = artifacts.require("./Accounts.sol");
 const HavenContract = artifacts.require("./Havens.sol");
-const KudosContract = artifacts.require("./Kudos.sol")
-const WalletContract = artifacts.require("./Wallets.sol")
+const KudosContract = artifacts.require("./Kudos.sol");
+const WalletContract = artifacts.require("./Wallets.sol");
+const DocumentContract = artifacts.require("./Documents.sol")
+
 
 module.exports = function(deployer) {
   deployer.then( async() => {
@@ -31,6 +33,22 @@ module.exports = function(deployer) {
     const walletContractInstance = await WalletContract.deployed()
     console.log('\n*************************************************************************\n')
     console.log(`Wallet Contract Address: ${walletContractInstance.address}`)
+    console.log('\n*************************************************************************\n')
+    await deployer.deploy(
+      DocumentContract, 
+      accountContractInstance.address, 
+      walletContractInstance.address
+    )
+    const documentContractInstance = await DocumentContract.deployed()
+    console.log('\n*************************************************************************\n')
+    console.log(`Document Contract Address: ${documentContractInstance.address}`)
+    console.log('\n*************************************************************************\n')
+    
+    const tx1 = await walletContractInstance.setDocContract(documentContractInstance.address)
+    console.log('\n\n*************************************************************************\n')
+    console.log(`Set document contract address on wallet contract`)
+    console.log('\n*************************************************************************\n')
+    console.log(tx1)
     console.log('\n*************************************************************************\n')
   })
 };

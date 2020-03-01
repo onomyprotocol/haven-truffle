@@ -12,7 +12,7 @@ interface WalletCont {
     function transferKudosDoc(address, address, uint256) external returns(bool success);
 }
 
-contract Havens is Ownable {
+contract Documents is Ownable {
 
     AcctCont ac;
     WalletCont wc;
@@ -35,18 +35,18 @@ contract Havens is Ownable {
         uint256 kudosEarned; // kudosEarned by document
     }
 
-    mapping (bytes32 => documentStruct) document; // natural rights Haven ID hash to document 
+    mapping (bytes32 => documentStruct) document; // natural rights Haven ID hash to document
 
     // Only contract owner may change Account Contract Address
     function setAccountContract(address _newAcctContAddr) public onlyOwner returns(bool success) {
-        require(_newAcctContAddr != address(0));
+        require(_newAcctContAddr != address(0), "address must not equal 0");
         ac = AcctCont(_newAcctContAddr);
         return true;
     }
 
     // Only contract owner may change Account Contract Address
     function setWalletContract(address _newAcctContAddr) public onlyOwner returns(bool success) {
-        require(_newAcctContAddr != address(0));
+        require(_newAcctContAddr != address(0),"address must not equal 0");
         ac = AcctCont(_newAcctContAddr);
         return true;
     }
@@ -60,7 +60,7 @@ contract Havens is Ownable {
 
     // Add document
     function addDocument(bytes32 _naturalRightsId, bytes32 _parentNrId, address _acctAddr) public returns(bool success) {
-        require(document[_naturalRightsId].acctAddr == address(0));
+        require(document[_naturalRightsId].acctAddr == address(0), "document not empty");
         document[_naturalRightsId].parentNrId = _parentNrId;
         document[_naturalRightsId].acctAddr = _acctAddr;
         document[_naturalRightsId].timestamp = now;

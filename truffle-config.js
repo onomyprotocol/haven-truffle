@@ -19,28 +19,9 @@
  */
 
 
-const { readFileSync } = require('fs')
 const path = require('path')
-const { join } = require('path')
-const LoomTruffleProvider  = require ('loom-truffle-provider')
-const { sha256 } = require ('js-sha256')
-const { CryptoUtils } = require ('loom-js')
-const { mnemonicToSeedSync } = require ('bip39')
 const fs = require('fs')
-
-
-function getLoomProviderWithPrivateKey (privateKeyPath, chainId, writeUrl, readUrl) {
-  const privateKey = readFileSync(privateKeyPath, 'utf-8')
-  return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey)
-}
-
-function getLoomProviderWithMnemonic (mnemonicPath, chainId, writeUrl, readUrl) {
-  const mnemonic = readFileSync(mnemonicPath, 'utf-8').toString().trim()
-  const seed = mnemonicToSeedSync(mnemonic)
-  const privateKeyUint8ArrayFromSeed = CryptoUtils.generatePrivateKeyFromSeed(new Uint8Array(sha256.array(seed)))
-  const privateKeyB64 = CryptoUtils.Uint8ArrayToB64(privateKeyUint8ArrayFromSeed)
-  return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKeyB64)
-}
+const loomUtils = require('./utils/loom')
 
 module.exports = {
   /**
@@ -62,12 +43,12 @@ module.exports = {
         const mnemonicPath = path.join(__dirname, 'extdev_mnemonic')
         const privateKeyPath = path.join(__dirname, 'extdev_private_key')
         if (fs.existsSync(privateKeyPath)) {
-          const loomTruffleProvider = getLoomProviderWithPrivateKey(privateKeyPath, chainId, writeUrl, readUrl)
+          const loomTruffleProvider = loomUtils.getLoomProviderWithPrivateKey(privateKeyPath, chainId, writeUrl, readUrl)
           // use a dummy mnemonic to create a bunch of accounts we'll use for testing purposes
           loomTruffleProvider.createExtraAccountsFromMnemonic("gravity top burden flip student usage spell purchase hundred improve check genre", 10)
           return loomTruffleProvider
         } else if (fs.existsSync(mnemonicPath)) {
-          const loomTruffleProvider = getLoomProviderWithMnemonic(mnemonicPath, chainId, writeUrl, readUrl)
+          const loomTruffleProvider = loomUtils.getLoomProviderWithMnemonic(mnemonicPath, chainId, writeUrl, readUrl)
           return loomTruffleProvider
         }
       },
