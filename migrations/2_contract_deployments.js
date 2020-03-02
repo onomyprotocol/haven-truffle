@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const AccountContract = artifacts.require("./Accounts.sol");
 const HavenContract = artifacts.require("./Havens.sol");
 const KudosContract = artifacts.require("./Kudos.sol");
@@ -50,5 +52,25 @@ module.exports = function(deployer) {
     console.log('\n*************************************************************************\n')
     console.log(tx1)
     console.log('\n*************************************************************************\n')
-  })
+    
+    const contAddrs = {
+      account: accountContractInstance.address,
+      haven: havenContractInstance.address,
+      kudos: kudosContractInstance.address,
+      wallet: walletContractInstance.address,
+      document: documentContractInstance.address
+    }
+
+    const contAddrsJSON = JSON.stringify(contAddrs)
+    
+    fs.writeFile('../hsocial/src/loom/havenAddrs.json', contAddrsJSON, function(err) {
+      if (err) {
+          console.log(err);
+      }
+    });
+    console.log('\n\n*************************************************************************\n')
+    console.log(`Contract address saved to hsocial`)
+    console.log('\n*************************************************************************\n')
+
+  });
 };

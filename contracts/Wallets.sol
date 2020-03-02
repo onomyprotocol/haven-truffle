@@ -86,6 +86,11 @@ contract Wallets is Ownable {
     function isDevAuthorized(address _acctAddr) public returns(bool isIndeed) {
         return ac.isDevAuthorized(_acctAddr, msg.sender);
     }
+
+    // Check allowance from address to contract
+    function contAllowance(address _acctAddr) public returns(uint256 value) {
+        return kc.allowance(_acctAddr, address(this));
+    }
     
     // Add kudos from account
     function depositKudos(address _acctAddr, uint256 value) public returns(bool success) {
