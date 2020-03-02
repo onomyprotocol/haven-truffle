@@ -29,13 +29,14 @@ contract Documents is Ownable {
     }
 
     struct documentStruct {
-        bytes32 parentNrId; // Parent Nr ID
+        string naturalRightsId; // Document Natural Rights Id
+        string parentNrId; // Parent Nr ID
         address acctAddr; // document Nr owner
         uint timestamp; // timestamp of document
         uint256 kudosEarned; // kudosEarned by document
     }
 
-    mapping (bytes32 => documentStruct) document; // natural rights Haven ID hash to document
+    mapping (uint256 => documentStruct) document; // natural rights Haven ID hash to document
 
     // Only contract owner may change Account Contract Address
     function setAccountContract(address _newAcctContAddr) public onlyOwner returns(bool success) {
@@ -50,46 +51,64 @@ contract Documents is Ownable {
         ac = AcctCont(_newAcctContAddr);
         return true;
     }
+
+    // Is msg.sender authorized to sign for the account?
+    function isDevAuthorized(address _acctAddr) public returns(bool isIndeed) {
+        return ac.isDevAuthorized(_acctAddr, msg.sender);
+    }
     
     // Add document event
     event AddDocument(
-        bytes32 naturalRightsId,
-        bytes32 parentNrId,
+        string naturalRightsId,
+        string parentNrId,
         uint timestamp
     );
 
     // Add document
-    function addDocument(bytes32 _naturalRightsId, bytes32 _parentNrId, address _acctAddr) public returns(bool success) {
-        require(document[_naturalRightsId].acctAddr == address(0), "document not empty");
-        document[_naturalRightsId].parentNrId = _parentNrId;
-        document[_naturalRightsId].acctAddr = _acctAddr;
-        document[_naturalRightsId].timestamp = now;
+    function addDocument(string memory _naturalRightsId, string memory _parentNrId, address _acctAddr) public returns(bool success) {
+        require(isDevAuthorized(_acctAddr), "msg.sender not authorized for account");
+        uint256 naturalRightsIdHash = uint256(keccak256(bytes(_naturalRightsId)));
+        require(document[naturalRightsIdHash].acctAddr == address(0), "document already exists");
+        document[naturalRightsIdHash].parentNrId = _parentNrId;
+        document[naturalRightsIdHash].acctAddr = _acctAddr;
+        document[naturalRightsIdHash].timestamp = now;
+        document[naturalRightsIdHash].kudosEarned = uint256(0);
         emit AddDocument(_naturalRightsId, _parentNrId, now);
         return true;
     }
 
     // Tip document event
     event TipDocument(
-        bytes32 naturalRightsId,
+        string naturalRightsId,
         uint256 value
     );
 
     // Tip Document
-    function tipDocument(bytes32 _naturalRightsId, address _acctAddr, uint256 value) public returns(bool success) {
-        require(ac.isDevAuthorized(_acctAddr, msg.sender), "msg.sender not authorized for account");
+    function tipDocument(string memory _naturalRightsId, address _acctAddr, uint256 value) public returns(bool success) {
+        require(isDevAuthorized(_acctAddr), "msg.sender not authorized for account");
         require(wc.getAcctBal(_acctAddr)>=value, "account balance too low");
-        if(document[_naturalRightsId].parentNrId == 0) {
-            document[_naturalRightsId].kudosEarned += value;
-            wc.transferKudosDoc(_acctAddr, document[_naturalRightsId].acctAddr, value);
+        uint256 naturalRightsIdHash = uint256(keccak256(bytes(_naturalRightsId)));
+        require(document[naturalRightsIdHash].acctAddr != address(0), "document does not have owner");
+        string memory top = 'top';
+        if(keccak256(abi.encodePacked(document[naturalRightsIdHash].parentNrId)) == keccak256(abi.encodePacked((top)))) {
+            document[naturalRightsIdHash].kudosEarned += value;
+            wc.transferKudosDoc(_acctAddr, document[naturalRightsIdHash].acctAddr, value);
             emit TipDocument(_naturalRightsId, value);
         } else {
             uint256 netValue = value * 9 / 10;
             uint256 rake = value * 1 / 10;
-            document[_naturalRightsId].kudosEarned += netValue;
-            wc.transferKudosDoc(_acctAddr, document[_naturalRightsId].acctAddr, netValue);
-            tipDocument(document[_naturalRightsId].parentNrId, _acctAddr, rake);
+            document[naturalRightsIdHash].kudosEarned += netValue;
+            wc.transferKudosDoc(_acctAddr, document[naturalRightsIdHash].acctAddr, netValue);
+            tipDocument(document[naturalRightsIdHash].parentNrId, _acctAddr, rake);
             emit TipDocument(_naturalRightsId, netValue);
         }
         return true;
+    }
+
+    // Get document earnings
+    function getKudosEarned(string memory _naturalRightsId) public view returns(uint256 value) {
+        uint256 naturalRightsIdHash = uint256(keccak256(bytes(_naturalRightsId)));
+        require(document[naturalRightsIdHash].acctAddr != address(0), "document does not have owner");
+        return document[naturalRightsIdHash].kudosEarned;
     }
 }
